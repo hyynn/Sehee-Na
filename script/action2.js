@@ -1,6 +1,4 @@
-
-
-
+// 탭 전환 함수
 function showTab(tabName) {
     // 모든 탭 버튼에서 active 클래스 제거
     document.querySelectorAll('.tab-button').forEach(btn => {
@@ -25,36 +23,146 @@ function showTab(tabName) {
 
     // 해당 사이드바 보이기
     document.getElementById(tabName + '-sidebar').classList.add('active');
+
+    // 탭 전환 시 인터랙티브 기능 초기화
+    setTimeout(() => {
+        if (tabName === 'main' || tabName === 'sub1' || tabName === 'sub2') {
+            initSectionNavigation(tabName);
+        } else if (tabName === 'mobile') {
+            initMobileNavigation();
+        }
+    }, 100);
 }
 
-$(document).ready(function () {
-    // 헤더와 푸터 로드
-    // $('header').load('include/header.html', function () {
-    //     initMobileMenu();
-    // })
+// Section Navigation (Main, Sub1, Sub2 탭용)
+function initSectionNavigation(tabName) {
+    const sidebar = document.getElementById(`${tabName}-sidebar`);
+    const sectionCards = sidebar.querySelectorAll('.section-card[data-section]');
 
-    $('footer').load('include/footer.html', function () {
+    if (!sidebar || sectionCards.length === 0) return;
 
+    // 사이드바 카드 클릭 이벤트
+    sectionCards.forEach(card => {
+        card.addEventListener('click', function () {
+            // Active 클래스 전환
+            sectionCards.forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
-})
+}
 
-const scrollTopBtn = document.getElementById('scrollTop');
+// Mobile Navigation
+function initMobileNavigation() {
+    const mobileItems = document.querySelectorAll('.mobile-preview-item');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const sectionCards = mobileSidebar.querySelectorAll('.section-card[data-section]');
 
-scrollTopBtn.addEventListener('click', function () {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    if (mobileItems.length === 0) return;
+
+    // 사이드바 카드 호버 시 해당 이미지 활성화
+    sectionCards.forEach(card => {
+        card.addEventListener('mouseenter', function () {  // click → mouseenter
+            const sectionName = this.getAttribute('data-section');
+            const targetItem = document.querySelector(`.mobile-preview-item[data-section="${sectionName}"]`);
+
+            if (targetItem) {
+                mobileItems.forEach(item => item.classList.remove('active'));
+                targetItem.classList.add('active');
+                sectionCards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+
+    // 모바일 이미지 호버 시
+    mobileItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', function () {  // click → mouseenter
+            mobileItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+
+            sectionCards.forEach(c => c.classList.remove('active'));
+            if (sectionCards[index]) {
+                sectionCards[index].classList.add('active');
+            }
+        });
+    });
+}
+
+// Document Ready
+$(document).ready(function () {
+    // 모바일 프리뷰 아이템 호버 시 active 클래스 토글
+    $('.mobile-preview-item').hover(
+        function () {
+            $('.mobile-preview-item').removeClass('active');
+            $(this).addClass('active');
+        }
+    );
+
+    // Footer 로드
+    $('footer').load('include/footer.html', function () {
+        initFooterEvents();
     });
 });
 
-// 스크롤 이벤트 통합
+// Scroll Top Button
+const scrollTopBtn = document.getElementById('scrollTop');
+
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Window Scroll Event
 $(window).scroll(function () {
     const scrollTop = $(window).scrollTop();
+    const windowHeight = $(window).height();
+    const documentHeight = $(document).height();
 
-    // 스크롤 버튼 처리
-    if (scrollTop > 300) {
-        scrollTopBtn.classList.add('show');
+    // Scroll Top Button
+    if (scrollTopBtn) {
+        if (scrollTop > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    }
+
+    // Footer iframe 처리
+    if (scrollTop + windowHeight >= documentHeight - 10) {
+        $('footer iframe').addClass('active');
+        $('.contact-bubble').addClass('show');
     } else {
-        scrollTopBtn.classList.remove('show');
+        $('footer iframe').removeClass('active');
+        $('.contact-bubble').removeClass('show');
+        $('.contact-bubble').text('Drag me!');
+    }
+});
+
+// Footer Events
+function initFooterEvents() {
+    let iframeActive = false;
+
+    $('footer iframe').on('mouseenter', function () {
+        iframeActive = true;
+    }).on('mouseleave', function () {
+        if (iframeActive && document.activeElement.tagName === 'IFRAME') {
+            document.activeElement.blur();
+            $('body').focus();
+        }
+        iframeActive = false;
+    });
+}
+
+// Window Blur Event (iframe focus 감지)
+$(window).on('blur', function () {
+    if (document.activeElement.tagName === 'IFRAME') {
+        const $bubble = $('.contact-bubble');
+        if ($bubble.hasClass('show') && $bubble.text() === 'Drag me!') {
+            $bubble.text('Contact me!');
+        }
     }
 });
