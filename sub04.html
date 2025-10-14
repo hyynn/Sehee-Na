@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - Entro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="sub sub04">
+    <div class="centerbox sub-topmenu">
+        <div class="sub-btn">
+            <a href="index.html" class="back-button">←&nbsp;&nbsp; Back to Portfolio</a>
+            <a href="https://hyynn.github.io/Entro/" target="_blank" class="visit-button">Visit the Website
+                &nbsp;&nbsp;→</a>
+        </div>
+
+        <div class="project-header">
+            <h1 class="project-title">Entro</h1>
+            <p class="project-subtitle">고객의 시선을 끄는 무인키오스크 브랜드의 랜딩페이지</p>
+            <div class="project-info">
+                <div class="info-item">
+                    <span class="info-label">Duration:</span>
+                    <span class="info-value">2025.06 - 2025.07</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Role:</span>
+                    <span class="info-value">UI/UX Design, Web Publishing 100%</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Tools:</span>
+                    <span class="info-value">Figma, HTML, CSS, JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail-container">
+        <div class="detail-main">
+
+
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showTab('main')">Main</button>
+                    <!-- <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
+                    <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
+                    <button class="tab-button" onclick="showTab('sub3')">Sub page 3</button> -->
+                </div>
+
+                <div id="main-tab" class="tab-content active">
+                    <div class="main-preview">
+                        <img src="images/sub04/main.png" alt="">
+                    </div>
+                </div>
+
+                <div id="sub1-tab" class="tab-content">
+                    <div class="sub-preview">
+                        <img src="images/sub04/main.png" alt="">
+                    </div>
+                </div>
+
+                <!-- <div id="sub2-tab" class="tab-content">
+                    <div class="sub-preview">
+                        <img src="images/sub03/sub2_visual1.png" alt="">
+                    </div>
+                </div>
+
+                <div id="sub3-tab" class="tab-content">
+                    <div class="sub-preview">
+                        <img src="images/sub03/sub3_visual1.png" alt="">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Main 사이드바 -->
+        <div class="detail-sidebar-main sidebar-content active" id="main-sidebar">
+            <div class="section-item">
+                <div class="section-title">All sections</div>
+                <div class="section-description">
+                    HTML 문서 내의 a태그를 사용한 부분들에서 'e.preventDefault()'로 바로 점프하는 동작을 막은 후 스크립트로 애니메이션을 제어하서 요소가 화면의 상단이나 중앙에
+                    붙을 수 있도록 JavaScript로 구현했습니다. 'behavior: 'smooth'' 속성을 사용하여 부드럽게 애니메이션처럼 이동하도록 작업했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub04/main_01_01.png" alt=""></div>
+            </div>
+
+            <div class=" section-item">
+                <div class="section-title">Visual</div>
+                <div class="section-description">
+                    스크롤을 내리면 비주얼의 슬로건이 부드럽게 나타나도록 작업했습니다.
+                </div>
+                <div class="code-preview"></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Sections</div>
+                <div class="section-description">
+                    랜딩페이지의 특성을 고려하여 사용자의 시선을 잡아 끌 수 있도록 여러 섹션들에 다양한 호버 효과를 적용하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub04/main_03.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Header & Viewport</div>
+                <div class="section-description">
+                    길이가 긴 랜딩페이지의 특성상 헤더를 상단에 고정시키는 속성을 주었습니다. jQuery로 스크롤 위치를 자동으로 계산하여 스크롤이 100px 이상일때는 header에
+                    scrolled 클래스를 추가하여 헤더의 배경색이 변경되고, 그렇지 않으면 제거되도록 작업했습니다. <br>또한 길이가 긴 랜딩페이지의 속성을 고려하여 스크롤이 300px
+                    이상
+                    내려가면 top 버튼이 나타나도록 하여 최상단으로 바로 이동 가능하도록 설계했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub04/main_04.png" alt=""></div>
+            </div>
+
+
+
+            <div class="section-item">
+                <div class="section-title">Review</div>
+                <div class="section-description">
+
+                </div>
+                <div class="code-preview">서비스 이용자들의 실제 후기를 담아 서비스에 대한 신뢰도를 높였습니다. 시각적으로 한눈에 읽기 쉽도록 캐릭터와 말풍선으로 구성하였고, 서비스
+                    선택을 고민하는 방문자가 쉽게 공감할 수 있는 내용들로 구성하여 설득력을 높였습니다. </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <!-- footer -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="script/action2.js"></script>
+
+
+</body>
+
+</html>

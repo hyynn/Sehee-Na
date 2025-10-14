@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - Yourlut</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="sub sub05">
+    <div class="centerbox sub-topmenu">
+        <div class="sub-btn">
+            <a href="index.html" class="back-button">←&nbsp;&nbsp; Back to Portfolio</a>
+        </div>
+
+        <div class="project-header">
+            <h1 class="project-title">Combine Find Movie</h1>
+            <p class="project-subtitle">영화 시청 앱</p>
+            <div class="project-info">
+                <div class="info-item">
+                    <span class="info-label">Duration:</span>
+                    <span class="info-value">2025.05 - 2025.05</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Role:</span>
+                    <span class="info-value">UI/UX Design 100%<span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Tools:</span>
+                    <span class="info-value">Figma, photoshop</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-container">
+        <div class="detail-main">
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showTab('main')">Main</button>
+                </div>
+
+                <div id="main-tab" class="tab-content active">
+                    <div class="mobile-preview">
+                        <img src="images/sub05/main.png" alt="">
+                        <img src="images/sub05/sub1_visual.png" alt="">
+                        <img src="images/sub05/sub2_visual.png" alt="">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Main 사이드바 -->
+        <div class="detail-sidebar-main sidebar-content active" id="main-sidebar">
+            <div class="section-item">
+                <div class="section-title">Visual</div>
+                <div class="section-description">
+                    메인 화면에 가득 차있는 영상이 스크롤을 내리면 자동으로 90%의 비율로 작아지면서, 외곽은 라운드로 바뀌도록 하여 하단의 섹션과 잘 어우러지도록 jQuery로
+                    구현하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/main_01.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Section1</div>
+                <div class="section-description">
+                    작은 이미지를 클릭하거나 호버하면 왼쪽 큰 섹션에 이미지가 보이고, 클릭하지 않더라도 자동으로 차례대로 보이도록 jQuery로 구현하였습니다.
+                    스냅/영상 전문 업체인 브랜드의 특성에 맞춰 사진이 찍히는듯한 효과를 jQuery로 구현하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/main_02.png" alt=""> <img
+                        src="images/sub01/main_02_01.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Section2</div>
+                <div class="section-description">
+                    사용자의 스크롤 컨트롤에 맞춰 이미지가 부드럽게 한 장씩 올라오는듯한 효과를 jQuery로 구현하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/main_03.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Section3</div>
+                <div class="section-description">
+                    Swiper-Slide를 사용하여 대표 사진을 넣고, 페이지네이션과 버튼을 이용하여 사용자가 사진을 쉽게 선택하여 볼 수 있도록 구현하였습니다. 또한, 사진을 직접 넘기지
+                    않더라도
+                    자동으로 무한 재생 가능하도록 infinity-loop 버전을 사용하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/main_04.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Footer</div>
+                <div class="section-description">
+                    연락처 정보와 소셜미디어 링크를 포함한 푸터로 사용자가 쉽게 연락할 수 있도록 구성했습니다.
+                </div>
+                <div class="code-preview">Contact Form 코드 스크린샷</div>
+            </div>
+        </div>
+
+        <!-- Sub page 1 사이드바 -->
+        <div class="detail-sidebar-sub sidebar-content" id="sub1-sidebar">
+            <div class="section-item">
+                <div class="section-title">Header</div>
+                <div class="section-description">
+                    포트폴리오 섹션은 업체의 특성에 맞춰 갤러리를 중심으로 구성했습니다. 메인과 동일한 브랜딩을 유지하면서도 갤러리에 최적화된 레이아웃을 적용했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/sub1_01.png" alt="sub1_header"></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Gallery Section</div>
+                <div class="section-description">
+                    작품 이미지를 최적화하여 배치하고, 라이트박스 기능을 통해 사용자가 큰 화면으로 감상할 수 있도록 구현했습니다. 클라이언트가 새 이미지 파일들을 기존의 파일과 동일한 이름을
+                    사용하여
+                    업데이트하면 새로운 사진으로 업데이트 되도록 구현했고, 새로고침시 일정 비율로 랜덤 배치되도록 구성하여 감각적인 느낌을 더하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/sub1_02.png" alt=""><img
+                        src="images/sub01/sub1_02_01.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Navigation</div>
+                <div class="section-description">
+                    야외와 본식, 스냅과 필름 등 카테고리별로 작품을 분류하여 사용자가 원하는 스타일의 작품을 쉽게 찾을 수 있도록 구성했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/.png" alt=""></div>
+            </div>
+        </div>
+
+        <!-- Sub page 2 사이드바 -->
+        <div class="detail-sidebar-sub sidebar-content" id="sub2-sidebar">
+            <div class="section-item">
+                <div class="section-title">Introduction Section</div>
+                <div class="section-description">
+                    Brand Story는 업체 소개와 추구하는 방향성에 관한 정보를 담고 있습니다. About/Vision으로 섹션을 나누고, 각 페이지에서는 스토리텔링을 통해 브랜드의
+                    가치와
+                    철학을 담을 수 있도록 구성했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/sub2_about.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">User Experience</div>
+                <div class="section-description">
+                    하단 메뉴를 클릭했을때, 화면이 최상단으로 올라가지 않고 사용자가 보던 페이지에서 내용만 변경될 수 있도록 제작했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/sub2_contact.png" alt=""></div>
+            </div>
+        </div>
+
+        <!-- Mobile 사이드바 -->
+        <div class="detail-sidebar-mobile sidebar-content" id="mobile-sidebar">
+            <div class="section-item">
+                <div class="section-title">Responsive Design</div>
+                <div class="section-description">
+                    모바일 환경에 최적화된 반응형 디자인을 적용했습니다. 터치 인터페이스와 스와이프 제스처를 고려한 UX를 구현했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_responsive.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Mobile Navigation</div>
+                <div class="section-description">
+                    햄버거 메뉴를 활용한 모바일 네비게이션을 구현했습니다. 한 손 조작이 가능하도록 접근성을 고려한 UI를 설계했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_nav.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Touch Optimization</div>
+                <div class="section-description">
+                    터치 영역을 충분히 확보하고, 스와이프 갤러리와 터치 친화적인 인터랙션을 구현했습니다. 로딩 속도도 모바일에 최적화했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_touch.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Performance</div>
+                <div class="section-description">
+                    모바일 데이터 사용량을 고려한 이미지 최적화와 레이지 로딩을 적용했습니다. PWA 기능을 통해 앱과 같은 사용 경험을 제공합니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_performance.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <!-- footer -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="script/action2.js"></script>
+
+
+</body>
+
+</html>

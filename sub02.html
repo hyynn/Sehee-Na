@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - Ettential Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="sub sub02">
+    <div class="centerbox sub-topmenu">
+        <div class="sub-btn">
+            <a href="index.html" class="back-button">←&nbsp;&nbsp; Back to Portfolio</a>
+            <a href="https://hyynn.github.io/Essential-Studio/" target="_blank" class="visit-button">Visit the Website
+                &nbsp;&nbsp;→</a>
+        </div>
+
+        <div class="project-header">
+            <h1 class="project-title">Ettential Studio</h1>
+            <p class="project-subtitle">크리에이티브 디자인 에이전시 브랜드 사이트</p>
+            <div class="project-info">
+                <div class="info-item">
+                    <span class="info-label">Duration:</span>
+                    <span class="info-value">2025.08 - 2025.08</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Role:</span>
+                    <span class="info-value">UI/UX Design, Web Publishing 100%</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Tools:</span>
+                    <span class="info-value">Figma, HTML, SCSS, JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail-container">
+        <div class="detail-main">
+
+
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showTab('main')">Main</button>
+                    <!-- <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
+                    <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
+                    <button class="tab-button" onclick="showTab('mobile')">Mobile</button> -->
+                </div>
+
+                <div id="main-tab" class="tab-content active">
+                    <div class="main-preview">
+                        <img src="images/sub02/main.png" alt="">
+                    </div>
+                </div>
+
+                <!-- <div id="sub1-tab" class="tab-content">
+                    <div class="sub-preview">
+                        <img src="images/sub01/sub1_visual1.png" alt="">
+                    </div>
+                </div>
+
+                <div id="sub2-tab" class="tab-content">
+                    <div class="sub-preview">
+                        <img src="images/sub01/sub2_visual1.png" alt="">
+                    </div>
+                </div>
+
+                <div id="mobile-tab" class="tab-content">
+                    <div class="mobile-preview">
+                        <img src="images/sub01/sub3_visual1.png" alt="">
+                        <img src="images/sub01/sub3_visual2.png" alt="">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Main 사이드바 -->
+
+        <div class="detail-sidebar-main sidebar-content active" id="main-sidebar">
+
+
+            <div class="section-item">
+                <div class="section-title">Visual</div>
+                <div class="section-description">
+                    GSAP의 SplitText를 이용하여 비주얼의 슬로건이 나눠서 떨어지도록 작업하고, Swiper-Slide의 infinity-loop를 이용하여 비주얼 이미지의 불빛이 자동으로
+                    on&off 되어보이는듯한 효과를 주었습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub02/main_02_01.png" alt="">
+                    <img src="images/sub02/main_02_02.png" alt="">
+                </div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Header - Search box</div>
+                <div class="section-description">
+                    검색을 클릭했을 때 비주얼의 이미지가 어두워지며 검색창이 나오고, 닫을때는 이미지가 다시 밝아지며 사라지는 효과를 jQuery로 구현했습니다. fadeOut 효과를 주어 자연스럽게
+                    사라지도록 작업했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub02/main_01_01.png" alt=""><img
+                        src="images/sub02/main_01_02.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Section1 & Section3</div>
+                <div class="section-description">
+                    Swiper-Slide의 infinity-loop를 이용하여 작업물이 무한 슬라이드 되도록 작업하고, 촤측의 메뉴에 글래스모피즘 요소를 기반으로 섹션 제목과 슬라이드 버튼을
+                    배치하였습니다. 디스플레이 크기에 따라 슬라이드의 개수가 변하도록 브레이크 포인트를 지정하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub02/main_03_01.png" alt=""> <img
+                        src="images/sub02/main_03_02.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Footer</div>
+                <div class="section-description">
+                    글라스모피즘 요소를 기반으로 디자인하고, 고객상담 대표번호로 바로 연결될 수 있도록 작업하였습니다.
+                </div>
+                <div class="code-preview"></div>
+            </div>
+        </div>
+
+        <!-- Sub page 1 사이드바 -->
+        <div class="detail-sidebar-sub sidebar-content" id="sub1-sidebar">
+            <div class="section-item">
+                <div class="section-title">Header</div>
+                <div class="section-description">
+                    포트폴리오 섹션은 업체의 특성에 맞춰 갤러리를 중심으로 구성했습니다. 메인과 동일한 브랜딩을 유지하면서도 갤러리에 최적화된 레이아웃을 적용했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/sub1_01.png" alt="sub1_header"></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Gallery Section</div>
+                <div class="section-description">
+                    작품 이미지를 최적화하여 배치하고, 라이트박스 기능을 통해 사용자가 큰 화면으로 감상할 수 있도록 구현했습니다. 클라이언트가 새 이미지 파일들을 기존의 파일과 동일한 이름을
+                    사용하여
+                    업데이트하면 새로운 사진으로 업데이트 되도록 구현했고, 새로고침시 일정 비율로 랜덤 배치되도록 구성하여 감각적인 느낌을 더하였습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/sub1_02.png" alt=""><img
+                        src="images/sub01/sub1_02_01.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Navigation</div>
+                <div class="section-description">
+                    야외와 본식, 스냅과 필름 등 카테고리별로 작품을 분류하여 사용자가 원하는 스타일의 작품을 쉽게 찾을 수 있도록 구성했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub01/.png" alt=""></div>
+            </div>
+        </div>
+
+        <!-- Sub page 2 사이드바 -->
+        <div class="detail-sidebar-sub sidebar-content" id="sub2-sidebar">
+            <div class="section-item">
+                <div class="section-title">Introduction Section</div>
+                <div class="section-description">
+                    Brand Story는 업체 소개와 추구하는 방향성에 관한 정보를 담고 있습니다. About/Vision으로 섹션을 나누고, 각 페이지에서는 스토리텔링을 통해 브랜드의
+                    가치와
+                    철학을 담을 수 있도록 구성했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/sub2_about.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">User Experience</div>
+                <div class="section-description">
+                    하단 메뉴를 클릭했을때, 화면이 최상단으로 올라가지 않고 사용자가 보던 페이지에서 내용만 변경될 수 있도록 제작했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/sub2_contact.png" alt=""></div>
+            </div>
+        </div>
+
+        <!-- Mobile 사이드바 -->
+        <div class="detail-sidebar-mobile sidebar-content" id="mobile-sidebar">
+            <div class="section-item">
+                <div class="section-title">Responsive Design</div>
+                <div class="section-description">
+                    모바일 환경에 최적화된 반응형 디자인을 적용했습니다. 터치 인터페이스와 스와이프 제스처를 고려한 UX를 구현했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_responsive.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Mobile Navigation</div>
+                <div class="section-description">
+                    햄버거 메뉴를 활용한 모바일 네비게이션을 구현했습니다. 한 손 조작이 가능하도록 접근성을 고려한 UI를 설계했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_nav.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Touch Optimization</div>
+                <div class="section-description">
+                    터치 영역을 충분히 확보하고, 스와이프 갤러리와 터치 친화적인 인터랙션을 구현했습니다. 로딩 속도도 모바일에 최적화했습니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_touch.png" alt=""></div>
+            </div>
+
+            <div class="section-item">
+                <div class="section-title">Performance</div>
+                <div class="section-description">
+                    모바일 데이터 사용량을 고려한 이미지 최적화와 레이지 로딩을 적용했습니다. PWA 기능을 통해 앱과 같은 사용 경험을 제공합니다.
+                </div>
+                <div class="code-preview"><img src="images/sub/mobile_performance.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <!-- footer -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="script/action2.js"></script>
+
+
+</body>
+
+</html>
