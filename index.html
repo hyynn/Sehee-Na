@@ -14,6 +14,9 @@
     <div id="smooth-wrapper">
         <div id="smooth-content">
             <div class="poster-container part">
+                <div class="resolution-notice">
+                    이 포트폴리오는 1920×1080 해상도에 최적화되어 있습니다.
+                </div>
                 <nav class="imgMain">
                     <img src="images/object1.png" alt="object1" id="object1">
                     <img src="images/object2.png" alt="object2" id="object2">
@@ -137,7 +140,7 @@
 
             <section>
                 <div class="sectionbox section1 part">
-                    <div class="centerbox">
+                    <div class="centerbox" id="section01">
                         <div class="textbox">
                             <h2><span>01.</span>Yourlut</h2>
                             <div class="concept">
@@ -199,7 +202,7 @@
                 </div>
 
                 <div class="sectionbox section2 part">
-                    <div class="centerbox">
+                    <div class="centerbox" id="section02">
                         <div class="visualbox">
                             <figure><img src="images/computer.png" alt=""></figure>
                             <div class="screen"><a href="https://hyynn.github.io/Essential-Studio/" target="_blank"><img
@@ -237,6 +240,7 @@
                                             <span class="color-chip"></span>
                                             <span class="color-chip"></span>
                                             <span class="color-chip"></span>
+                                            <span class="color-chip"></span>
                                         </div>
                                     </span>
                                 </div>
@@ -257,7 +261,7 @@
                 </div>
 
                 <div class="sectionbox section3 part">
-                    <div class="centerbox">
+                    <div class="centerbox" id="section03">
                         <div class="textbox">
                             <h2><span>03.</span>Coremed</h2>
                             <div class="concept">
@@ -317,7 +321,7 @@
                 </div>
 
                 <div class="sectionbox section4 part">
-                    <div class="centerbox">
+                    <div class="centerbox" id="section04">
                         <div class="visualbox">
                             <figure><img src="images/computer.png" alt=""></figure>
                             <div class="screen"><a href="https://hyynn.github.io/Entro/" target="_blank"><img
@@ -363,7 +367,7 @@
                                 </div>
                                 <div class="item">
                                     <span class="label">Font</span>
-                                    <span class="value">Pretendard, Stunning</span>
+                                    <span class="value">Pretendard</span>
                                 </div>
                                 <div class="item">
                                     <span class="label">Role</span>
@@ -514,6 +518,7 @@
     <script>
         gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
+
         ScrollSmoother.create({
             wrapper: "#smooth-wrapper",
             content: "#smooth-content",
@@ -558,8 +563,13 @@
             { x: 530, yPercent: 80, scale: 0.5, rotate: 20 }, 'aa')
             .to("#object2",
                 { x: 550, yPercent: 75, scale: 0.5, rotate: 20 }, 'aa')
-            .from(".info-container .photo img", { opacity: 0, scale: 50 }
-            );
+            .from(".info-container .photo img", { opacity: 0, scale: 50 }, 'infoAnim')
+            .from(".info-container .info-contents", {
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                ease: 'power2.out'
+            }, 'infoAnim');
 
         gsap.timeline({
             scrollTrigger: {
@@ -746,6 +756,88 @@
         //         duration: 0.5
         //     }
         // });
+
+        // Footer Typing Animation
+        let footerAnimationPlayed = false;
+        let typingSplit;
+
+        ScrollTrigger.create({
+            trigger: 'footer',
+            start: 'top 80%',
+            end: 'top 20%',
+            onEnter: () => {
+                playTypingAnimation();
+            },
+            onLeaveBack: () => {
+                resetTypingAnimation();
+            }
+        });
+
+        function playTypingAnimation() {
+            // Reset first
+            gsap.set('.typing-text', { opacity: 0 });
+            $('.typing-text').show();
+            $('.contact-text').hide();
+            gsap.set('.contact-text', { opacity: 0 });
+            gsap.set('footer .info', { opacity: 0 });
+
+            // Create new split
+            if (typingSplit) typingSplit.revert();
+            typingSplit = new SplitText('.typing-text', { type: 'chars' });
+
+            gsap.set('.typing-text', { opacity: 1 });
+
+            gsap.from(typingSplit.chars, {
+                opacity: 0,
+                duration: 0.08,
+                stagger: 0.08,
+                ease: 'none'
+            });
+
+            // 2초 후 CONTACT와 info로 전환
+            gsap.delayedCall(2.6, () => {
+                // Fade out typing text
+                gsap.to('.typing-text', {
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        $('.typing-text').hide();
+
+                        // 0.3초 대기 후 CONTACT 표시
+                        gsap.delayedCall(0.3, () => {
+                            $('.contact-text').show();
+
+                            // Fade in CONTACT and info
+                            gsap.to('.contact-text', {
+                                opacity: 1,
+                                duration: 0.5
+                            });
+
+                            gsap.to('footer .info', {
+                                opacity: 1,
+                                duration: 0.5,
+                                delay: 0.2
+                            });
+                        });
+                    }
+                });
+            });
+        }
+
+        function resetTypingAnimation() {
+            gsap.killTweensOf('.typing-text');
+            gsap.killTweensOf('.contact-text');
+            gsap.killTweensOf('footer .info');
+
+            if (typingSplit) typingSplit.revert();
+
+            gsap.set('.typing-text', { opacity: 0 });
+            gsap.set('.contact-text', { opacity: 0 });
+            gsap.set('footer .info', { opacity: 0 });
+
+            $('.typing-text').show();
+            $('.contact-text').hide();
+        }
     </script>
 </body>
 

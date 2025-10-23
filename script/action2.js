@@ -90,6 +90,11 @@ function initMobileNavigation() {
 
 // Document Ready
 $(document).ready(function () {
+    // Resolution Notice - 4초 후 페이드아웃
+    setTimeout(function () {
+        $('.resolution-notice').addClass('fade-out');
+    }, 4000);
+
     // 모바일 프리뷰 아이템 호버 시 active 클래스 토글
     $('.mobile-preview-item').hover(
         function () {
@@ -140,6 +145,8 @@ $(window).scroll(function () {
         $('.contact-bubble').removeClass('show');
         $('.contact-bubble').text('Drag me!');
     }
+
+
 });
 
 // Footer Events
@@ -165,4 +172,25 @@ $(window).on('blur', function () {
             $bubble.text('Contact me!');
         }
     }
+});
+
+// URL 해시로 특정 섹션으로 이동 (GSAP ScrollSmoother 대응)
+$(document).ready(function () {
+    // 페이지 로드 시 해시가 있으면 해당 위치로 스크롤
+    if (window.location.hash) {
+        const targetId = window.location.hash;
+        const targetElement = $(targetId);
+
+        if (targetElement.length) {
+            setTimeout(function () {
+                const targetPosition = targetElement.offset().top;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }, 500); // ScrollSmoother 초기화를 기다림
+        }
+    }
+
+    // ... 기존 코드
 });
