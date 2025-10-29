@@ -139,14 +139,12 @@ $(window).scroll(function () {
     // Footer iframe 처리
     if (scrollTop + windowHeight >= documentHeight - 10) {
         $('footer iframe').addClass('active');
-        $('.contact-bubble').addClass('show');
+        // contact-bubble은 여기서 제거
     } else {
         $('footer iframe').removeClass('active');
         $('.contact-bubble').removeClass('show');
         $('.contact-bubble').text('Drag me!');
     }
-
-
 });
 
 // Footer Events

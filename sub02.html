@@ -13,7 +13,7 @@
 <body class="sub sub02">
     <div class="centerbox sub-topmenu">
         <div class="sub-btn">
-            <a href="index.html#section02" class="back-button">←&nbsp;&nbsp; Back to Portfolio</a>
+            <a href="index.html" class="back-button">←&nbsp;&nbsp; Back to Portfolio</a>
             <a href="https://hyynn.github.io/Essential-Studio/" target="_blank" class="visit-button">Visit the Website
                 &nbsp;&nbsp;→</a>
         </div>
@@ -42,11 +42,99 @@
         <div class="detail-main">
             <div class="tab-container">
                 <div class="tab-buttons">
-                    <button class="tab-button active" onclick="showTab('main')">Main</button>
+                    <button class="tab-button active" onclick="showTab('process')">Process</button>
+                    <button class="tab-button" onclick="showTab('main')">Main</button>
+                </div>
+
+                <!-- Process Tab -->
+                <div id="process-tab" class="tab-content active">
+                    <div class="workflow-container">
+                        <h3 class="workflow-title">Project Workflow</h3>
+                        <div class="workflow-timeline">
+                            <div class="workflow-step">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h4>Concept Development</h4>
+                                    <ul>
+                                        <li>크리에이티브 디자인 에이전시 특성 파악</li>
+                                        <li>포트폴리오 중심 웹사이트 기획</li>
+                                        <li>타겟 고객 분석 (디자인 의뢰 기업)</li>
+                                        <li>경쟁사 분석 및 차별화 포인트 도출</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h4>Design System</h4>
+                                    <ul>
+                                        <li>글래스모피즘 디자인 컨셉 수립</li>
+                                        <li>무채색 컬러 팔레트 선정</li>
+                                        <li>다크 톤 베이스 + 미니멀 3D 오브젝트 활용</li>
+                                        <li>와이어프레임 및 프로토타입 제작</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">03</div>
+                                <div class="step-content">
+                                    <h4>Visual Design</h4>
+                                    <ul>
+                                        <li>메인 비주얼 디자인 (Figma)</li>
+                                        <li>포트폴리오 레이아웃 설계</li>
+                                        <li>반투명 효과 및 블러 처리 적용</li>
+                                        <li>반응형 디자인 가이드 작성</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+
+                                <div class="step-number">04</div>
+                                <div class="step-content">
+                                    <h4>Development</h4>
+                                    <ul>
+                                        <li>HTML/SCSS/JavaScript 구현</li>
+                                        <li>GSAP SplitText 애니메이션 적용</li>
+                                        <li>Swiper slide Infinity loop 적용</li>
+                                        <li>검색 기능 및 인터랙션 구현</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">05</div>
+                                <div class="step-content">
+                                    <h4>Animation & Interaction</h4>
+                                    <ul>
+                                        <li>비주얼 슬로건 분할 애니메이션</li>
+                                        <li>이미지 페이드 인/아웃 효과</li>
+                                        <li>검색창 오버레이 효과</li>
+                                        <li>포트폴리오 슬라이드 인터랙션</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">06</div>
+                                <div class="step-content">
+                                    <h4>Testing & Launch</h4>
+                                    <ul>
+                                        <li>크로스 브라우징 테스트</li>
+                                        <li>반응형 디자인 검증</li>
+                                        <li>애니메이션 성능 최적화</li>
+                                        <li>최종 배포 및 GitHub Pages 호스팅</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Main Tab -->
-                <div id="main-tab" class="tab-content active">
+                <div id="main-tab" class="tab-content">
                     <div class="page-preview-container" id="main-preview-container">
                         <img src="images/sub02/main.png" alt="Main Page" class="page-preview-image">
                     </div>
@@ -54,22 +142,91 @@
             </div>
         </div>
 
-        <!-- Main Sidebar -->
-        <div class="detail-sidebar-main sidebar-content active" id="main-sidebar">
-            <div class="section-card" data-section="visual">
+        <!-- Process Sidebar -->
+        <div class="detail-sidebar-process sidebar-content active" id="process-sidebar">
+            <div class="section-card">
                 <div class="card-header">
-                    <h4 class="card-title">Visual</h4>
+                    <h4 class="card-title">Style Guide</h4>
                 </div>
                 <div class="card-body">
-                    <p class="card-description">GSAP의 SplitText를 이용하여 비주얼의 슬로건이 나눠서 떨어지도록 작업하고, Swiper-Slide의
-                        infinity-loop를 이용하여 비주얼 이미지의 불빛이 자동으로 on&off 되어보이는듯한 효과를 주었습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub02/main_02_01.png" alt="Visual 1">
-                        <img src="images/sub02/main_02_02.png" alt="Visual 2">
+                    <p class="card-description">프로젝트의 일관성을 위한 디자인 시스템</p>
+
+                    <div class="style-guide-section">
+                        <h5>Color Palette</h5>
+                        <div class="color-palette-detail">
+                            <div class="color-item">
+                                <span class="color-preview" style="background: #FBFAF9;"></span>
+                                <div class="color-info">
+                                    <strong>#FBFAF9</strong>
+                                    <p>Warm White - 배경 및 글래스 효과</p>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <span class="color-preview" style="background: #656565;"></span>
+                                <div class="color-info">
+                                    <strong>#656565</strong>
+                                    <p>Medium Gray - 텍스트 및 요소</p>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <span class="color-preview" style="background: #222222;"></span>
+                                <div class="color-info">
+                                    <strong>#222222</strong>
+                                    <p>Dark Gray - 다크 배경</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="style-guide-section">
+                        <h5>Typography</h5>
+                        <div class="typography-detail">
+                            <div class="font-item">
+                                <strong>Pretendard</strong>
+                                <p>본문 텍스트 - 가독성과 모던한 느낌</p>
+                            </div>
+                            <div class="font-item">
+                                <strong>Stunning</strong>
+                                <p>로고 텍스트 - 세련되고 독특한 느낌</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <div class="section-card">
+                <div class="card-header">
+                    <h4 class="card-title">Design Decisions</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">주요 디자인 결정과 그 이유</p>
+
+                    <div class="decision-item">
+                        <h5>왜 글래스모피즘인가?</h5>
+                        <p>작업물이 돋보이도록 배경을 무채색으로 하되, 글래스모피즘 효과로 깊이감과 현대적인 느낌을 동시에 구현했습니다. 반투명 효과는 콘텐츠 간 자연스러운 레이어링을
+                            만들어냅니다.</p>
+                    </div>
+
+                    <div class="decision-item">
+                        <h5>다크 톤 메인 비주얼</h5>
+                        <p>포트폴리오 이미지가 더욱 선명하게 보이도록 다크 톤을 선택했습니다. 어두운 배경은 밝은 색상의 작업물을 더욱 돋보이게 하는 효과가 있습니다.</p>
+                    </div>
+
+                    <div class="decision-item">
+                        <h5>GSAP 애니메이션</h5>
+                        <p>GSAP의 SplitText를 활용하여 슬로건이 역동적으로 나타나는 효과를 구현했습니다. 첫인상이 중요한 에이전시 사이트에 적합한 임팩트 있는 연출입니다.</p>
+                    </div>
+
+                    <div class="decision-item">
+                        <h5>Infinity Loop 슬라이드</h5>
+                        <p>Swiper slider의 Infinity Loop 기능으로 작업물을 끊임없이 순환 표시하여, 많은 포트폴리오를 자연스럽게 노출할 수 있도록 했습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Sidebar -->
+        <div class="detail-sidebar-main sidebar-content" id="main-sidebar">
             <div class="section-card" data-section="header">
                 <div class="card-header">
                     <h4 class="card-title">Header - Search box</h4>
@@ -84,12 +241,28 @@
                 </div>
             </div>
 
+            <div class="section-card" data-section="visual">
+                <div class="card-header">
+                    <h4 class="card-title">Visual</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">GSAP의 SplitText를 이용하여 비주얼의 슬로건이 나눠서 떨어지도록 작업하고, Swiper slide의
+                        Infinity Loop를 이용하여 비주얼 이미지의 불빛이 자동으로 on&off 되어보이는듯한 효과를 주었습니다.</p>
+                    <div class="card-preview">
+                        <img src="images/sub02/main_02_01.png" alt="Visual 1">
+                        <img src="images/sub02/main_02_02.png" alt="Visual 2">
+                    </div>
+                </div>
+            </div>
+
+
+
             <div class="section-card" data-section="section1">
                 <div class="card-header">
                     <h4 class="card-title">Section1 & Section3</h4>
                 </div>
                 <div class="card-body">
-                    <p class="card-description">Swiper-Slide의 infinity-loop를 이용하여 작업물이 무한 슬라이드 되도록 작업하고, 좌측의 메뉴에 글래스모피즘
+                    <p class="card-description">Swiper slide의 Infinity Loop를 이용하여 작업물이 무한 슬라이드 되도록 작업하고, 좌측의 메뉴에 글래스모피즘
                         요소를 기반으로 섹션 제목과 슬라이드 버튼을 배치하였습니다. 디스플레이 크기에 따라 슬라이드의 개수가 변하도록 브레이크 포인트를 지정하였습니다.</p>
                     <div class="card-preview">
                         <img src="images/sub02/main_03_01.png" alt="Section 1">

@@ -42,13 +42,178 @@
         <div class="detail-main">
             <div class="tab-container">
                 <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showTab('process')">Process</button>
                     <button class="tab-button active" onclick="showTab('main')">Main</button>
+                </div>
+
+                <!-- Process Tab -->
+                <div id="process-tab" class="tab-content active">
+                    <div class="workflow-container">
+                        <h3 class="workflow-title">Project Workflow</h3>
+                        <div class="workflow-timeline">
+                            <div class="workflow-step">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h4>Planning & Research</h4>
+                                    <ul>
+                                        <li>무인키오스크 시장 조사 및 분석</li>
+                                        <li>타겟 고객 분석 (소상공인, 중소기업)</li>
+                                        <li>경쟁사 벤치마킹</li>
+                                        <li>랜딩페이지 목표 설정</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h4>Concept Development</h4>
+                                    <ul>
+                                        <li>브랜드 아이덴티티 수립</li>
+                                        <li>블루 컬러 기반 신뢰감 표현</li>
+                                        <li>사이트 구조 설계 (IA)</li>
+                                        <li>콘텐츠 구성 계획</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">03</div>
+                                <div class="step-content">
+                                    <h4>Design System</h4>
+                                    <ul>
+                                        <li>컬러 팔레트 선정 (#22356F 메인 컬러)</li>
+                                        <li>타이포그래피 시스템 구축</li>
+                                        <li>와이어프레임 제작</li>
+                                        <li>디자인 가이드 작성</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">04</div>
+                                <div class="step-content">
+                                    <h4>UI/UX Design</h4>
+                                    <ul>
+                                        <li>랜딩페이지 레이아웃 디자인 (Figma)</li>
+                                        <li>제품 소개 섹션 구성</li>
+                                        <li>고객 후기 디자인</li>
+                                        <li>CTA 버튼 최적화</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">05</div>
+                                <div class="step-content">
+                                    <h4>Development & Interaction</h4>
+                                    <ul>
+                                        <li>HTML/CSS/JavaScript 구현</li>
+                                        <li>스크롤 애니메이션 적용</li>
+                                        <li>부드러운 섹션 이동 구현</li>
+                                        <li>호버 효과 및 인터랙션 추가</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="workflow-step">
+                                <div class="step-number">06</div>
+                                <div class="step-content">
+                                    <h4>Testing & Launch</h4>
+                                    <ul>
+                                        <li>크로스 브라우징 테스트</li>
+                                        <li>반응형 디자인 검증</li>
+                                        <li>성능 최적화</li>
+                                        <li>최종 배포 및 GitHub Pages 호스팅</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Main Tab -->
                 <div id="main-tab" class="tab-content active">
                     <div class="page-preview-container" id="main-preview-container">
                         <img src="images/sub04/main.png" alt="Main Page" class="page-preview-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process Sidebar -->
+        <div class="detail-sidebar-process sidebar-content active" id="process-sidebar">
+            <div class="section-card">
+                <div class="card-header">
+                    <h4 class="card-title">Style Guide</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">프로젝트의 일관성을 위한 디자인 시스템</p>
+
+                    <div class="style-guide-section">
+                        <h5>Color Palette</h5>
+                        <div class="color-palette-detail">
+                            <div class="color-item">
+                                <span class="color-preview" style="background: #22356F;"></span>
+                                <div class="color-info">
+                                    <strong>#22356F</strong>
+                                    <p>Primary - 신뢰감을 주는 메인 블루</p>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <span class="color-preview" style="background: #4A90E2;"></span>
+                                <div class="color-info">
+                                    <strong>#4A90E2</strong>
+                                    <p>Secondary - 포인트가 되는 스카이 블루</p>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <span class="color-preview" style="background: #FAFAFA;"></span>
+                                <div class="color-info">
+                                    <strong>#FAFAFA</strong>
+                                    <p>Background - 배경색</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="style-guide-section">
+                        <h5>Typography</h5>
+                        <div class="typography-detail">
+                            <div class="font-item">
+                                <strong>Pretendard</strong>
+                                <p>본문 텍스트 - 가독성과 현대적인 느낌</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="card-header">
+                    <h4 class="card-title">Design Decisions</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">주요 디자인 결정과 그 이유</p>
+
+                    <div class="decision-item">
+                        <h5>왜 블루 컬러인가?</h5>
+                        <p>무인키오스크는 신뢰성이 중요한 제품입니다. 블루 계열의 컬러는 안정감과 전문성을 전달하며, 기술 제품에 대한 신뢰를 구축하는 데 효과적입니다.</p>
+                    </div>
+
+                    <div class="decision-item">
+                        <h5>랜딩페이지 구조</h5>
+                        <p>한 페이지에 모든 정보를 담아 사용자가 스크롤만으로 제품의 전체 정보를 파악할 수 있도록 설계했습니다. 페이지 이동 없이 정보를 제공하여 이탈률을 낮췄습니다.</p>
+                    </div>
+
+                    <div class="decision-item">
+                        <h5>고정 헤더</h5>
+                        <p>긴 랜딩페이지에서 사용자가 언제든 메뉴에 접근할 수 있도록 헤더를 고정했습니다. 스크롤 시 배경색이 변경되어 가독성을 유지합니다.</p>
+                    </div>
+
+                    <div class="decision-item">
+                        <h5>호버 효과</h5>
+                        <p>랜딩페이지의 특성상 시각적 인터랙션이 중요합니다. 각 섹션에 호버 효과를 적용하여 사용자의 시선을 끌고 클릭을 유도했습니다.</p>
                     </div>
                 </div>
             </div>

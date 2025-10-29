@@ -816,7 +816,11 @@
                             gsap.to('footer .info', {
                                 opacity: 1,
                                 duration: 0.5,
-                                delay: 0.2
+                                delay: 0.2,
+                                onComplete: () => {
+                                    // info 페이드인 완료 후 drag me 표시
+                                    $('.contact-bubble').addClass('show');
+                                }
                             });
                         });
                     }
