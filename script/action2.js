@@ -1,3 +1,22 @@
+// Intersection Observer로 스크롤 감지
+const observerOptions = {
+    threshold: 0.2,  // 20% 보이면 트리거
+    rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+// 모든 textbox 관찰
+document.querySelectorAll('.sectionbox .textbox').forEach(textbox => {
+    observer.observe(textbox);
+});
+
 // 탭 전환 함수
 function showTab(tabName) {
     // 모든 탭 버튼에서 active 클래스 제거
@@ -136,19 +155,23 @@ $(window).scroll(function () {
         }
     }
 
-    // Footer iframe 처리
-    if (scrollTop + windowHeight >= documentHeight - 10) {
-        $('footer iframe').addClass('active');
-        // contact-bubble은 여기서 제거
-    } else {
-        $('footer iframe').removeClass('active');
-        $('.contact-bubble').removeClass('show');
-        $('.contact-bubble').text('Drag me!');
+    // Footer iframe 처리 - 메인 페이지에서만
+    if (document.body.id === 'main') {
+        if (scrollTop + windowHeight >= documentHeight - 10) {
+            $('footer iframe').addClass('active');
+        } else {
+            $('footer iframe').removeClass('active');
+            $('.contact-bubble').removeClass('show');
+            $('.contact-bubble').text('Drag me!');
+        }
     }
 });
 
 // Footer Events
 function initFooterEvents() {
+    // 메인 페이지에서만 실행
+    if (document.body.id !== 'main') return;
+
     let iframeActive = false;
 
     $('footer iframe').on('mouseenter', function () {
@@ -164,6 +187,9 @@ function initFooterEvents() {
 
 // Window Blur Event (iframe focus 감지)
 $(window).on('blur', function () {
+    // 메인 페이지에서만 실행
+    if (document.body.id !== 'main') return;
+
     if (document.activeElement.tagName === 'IFRAME') {
         const $bubble = $('.contact-bubble');
         if ($bubble.hasClass('show') && $bubble.text() === 'Drag me!') {
