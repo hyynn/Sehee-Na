@@ -94,22 +94,20 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 
 
 /* section4 COLOR CHIPS */
-.section4 .textbox .detail .item .color-chip:nth-child(1) { background-color: #22356F; } 
-.section4 .textbox .detail .item .color-chip:nth-child(2) { background-color: #223570; } 
-.section4 .textbox .detail .item .color-chip:nth-child(3) { background-color: #001122; } 
-.section4 .textbox .detail .item .color-chip:nth-child(4) { background-color: #2F3E46; } 
-.section4 .textbox .detail .item .color-chip:nth-child(5) { background-color: #333333; } 
-.section4 .textbox .detail .item .color-chip:nth-child(6) { background-color: #505050; } 
-.section4 .textbox .detail .item .color-chip:nth-child(7) { background-color: #FAFAFA; } 
+.section4 .textbox .detail .item .color-chip:nth-child(1) { background-color: #22356F; }  
+.section4 .textbox .detail .item .color-chip:nth-child(2) { background-color: #001122; } 
+.section4 .textbox .detail .item .color-chip:nth-child(3) { background-color: #2F3E46; } 
+.section4 .textbox .detail .item .color-chip:nth-child(4) { background-color: #333333; } 
+.section4 .textbox .detail .item .color-chip:nth-child(5) { background-color: #505050; } 
+.section4 .textbox .detail .item .color-chip:nth-child(6) { background-color: #FAFAFA; } 
 
 /* section5 COLOR CHIPS */
 .section5 .textbox .detail .item .color-chip:nth-child(1) { background-color: #1B2B3B; } 
 .section5 .textbox .detail .item .color-chip:nth-child(2) { background-color: #012C4E; } 
 .section5 .textbox .detail .item .color-chip:nth-child(3) { background-color: #13263A; } 
 .section5 .textbox .detail .item .color-chip:nth-child(4) { background-color: #EAD292; } 
-.section5 .textbox .detail .item .color-chip:nth-child(5) { background-color: #E2DCCE; } 
-.section5 .textbox .detail .item .color-chip:nth-child(6) { background-color: #505050; } 
-.section5 .textbox .detail .item .color-chip:nth-child(7) { background-color: #FAFAFA; } 
+.section5 .textbox .detail .item .color-chip:nth-child(5) { background-color: #505050; } 
+.section5 .textbox .detail .item .color-chip:nth-child(6) { background-color: #FAFAFA; } 
 /* COLOR CHIPS END */
 
 .sectionbox .visualbox { width: 58.33%; position: relative; } 
@@ -128,7 +126,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 .section5 .mobilebox .visualbox2 { position: relative; display: flex; justify-content: end; perspective: 800px; } 
 .section5 .mobilebox .visualbox2 figure { width: 70%; position: relative; } 
 .section5 .mobilebox .visualbox2 figure img { width: 100%; object-fit: cover; z-index: -1; top: 0; } 
-.section5 .mobilebox .visualbox2 .screen { width: 68%; height: 438px; position: absolute; z-index: 2; background: #000; border-radius: 24px 24px 26px 20px; top: 17px; left: 86px; overflow: hidden; background: red; transform: rotateY(-25deg); cursor: pointer; } 
+.section5 .mobilebox .visualbox2 .screen { width: 68%; height: 438px; position: absolute; z-index: 2; background: #000; border-radius: 24px 24px 26px 20px; top: 17px; left: 86px; overflow: hidden; transform: rotateY(-25deg);} 
 .sectionbox .mobilebox .visualbox2 .screen img { width: 100%; position: absolute; top: 0; left: 0; transition: 6s; } 
 .section5 .vis1 { z-index: 3; right: -100px; } 
 .section5 .vis2 { z-index: 2; right: -50px; } 
@@ -216,6 +214,8 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 .section-card.active { border-left: 4px solid #A5B2A2; background: #f9f9f9; } 
 .sub02 .section-card.active { border-left: 4px solid #656565; background: #f9f9f9; } 
 .sub03 .section-card.active { border-left: 4px solid #032753; background: #f9f9f9; } 
+.sub04 .section-card.active { border-left: 4px solid #22356F; background: #f9f9f9; } 
+.sub05 .section-card.active { border-left: 4px solid #012C4E; background: #f9f9f9; } 
 .section-card:last-child { margin-bottom: 0; } 
 
 .card-header { margin-bottom: 15px; } 
@@ -285,13 +285,13 @@ footer .typing-text::after { content: '|'; animation: blink 0.7s infinite; margi
 @keyframes blink { 0%, 50% { opacity: 1; } 
  51%, 100% { opacity: 0; } 
  }
-#main footer .contact-text { opacity: 0; display: none; }
-#main footer .info { opacity: 0; }
+#main footer .contact-text { opacity: 0; display: none; } 
+#main footer .info { opacity: 0; } 
 
 /* 서브에서 보이기 */
-.sub footer .contact-text { opacity: 1; display: inline-block; }
-.sub footer .info { opacity: 1; }
-.sub footer .typing-text { display: none; }
+.sub footer .contact-text { opacity: 1; display: inline-block; } 
+.sub footer .info { opacity: 1; } 
+.sub footer .typing-text { display: none; } 
 
 footer iframe { pointer-events: none; position: absolute; bottom: 0; left: 10%; } 
 footer .centerbox { height: 100%; } 
@@ -300,18 +300,8 @@ footer .contact-bubble { position: fixed; bottom: 50px; right: 50px; background:
 footer .contact-bubble::after { content: ''; position: absolute; bottom: -10px; right: 30px; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid #fafafa; } 
 footer .contact-bubble.show { opacity: 1; visibility: visible; transform: translate(-380px, -700px); } 
 
-footer .info .textbox {
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-footer .info .textbox:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-footer .info .textbox:hover .title {color: #fafafa;}
+footer .info .textbox .detail { transition: all 0.3s ease; padding: 10px 15px; border-radius: 8px; display: inline-block; cursor: pointer; } 
+footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); } 
 
 /* Scroll Top Button */
 .scroll-top-btn { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; color: #222; border: none; border-radius: 50%; background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(135, 16, 182, 0.1); cursor: pointer; font-size: 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 99; text-shadow: -0.4px -0.4px 0 #fafafa,

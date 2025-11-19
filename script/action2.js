@@ -9,10 +9,13 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
         }
+        else {
+            entry.target.classList.remove('active');
+        }
     });
 }, observerOptions);
 
-// 모든 textbox 관찰
+// 모든 sectionbox의 textbox 관찰
 document.querySelectorAll('.sectionbox .textbox').forEach(textbox => {
     observer.observe(textbox);
 });
