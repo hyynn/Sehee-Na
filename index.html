@@ -13,7 +13,7 @@
 
     <div id="smooth-wrapper">
         <div id="smooth-content">
-            <div class="poster-container part">
+            <div class="poster-container part centerbox">
                 <div class="resolution-notice">
                     이 포트폴리오는 1920×1080 해상도에 최적화되어 있습니다.
                 </div>
@@ -51,9 +51,10 @@
                     <div class="description-box">
                         <p>My design philosophy centers on the belief that great web experiences should feel effortless
                             to users
-                            while being built on solid technical foundations. Through clean, semantic code and
-                            user-centered
-                            design principles, I create digital spaces where art and technology converge seamlessly.
+                            while being built on solid technical foundations. <span> Through clean, semantic code and
+                                user-centered
+                                design principles, I create digital spaces where art and technology converge seamlessly.
+                            </span>
                         </p>
 
                         <p>This
@@ -91,7 +92,7 @@
 
 
                             <div class="info-content">
-                                <div class="info-item">
+                                <div class="info-item skill-container">
                                     <h2 class="skill">SKILLS</h2>
                                     <ul class="skills">
                                         <li><img src="images/skills/01.png" alt="icon"></li>
@@ -234,7 +235,6 @@
                                             <span class="color-chip"></span>
                                             <span class="color-chip"></span>
                                             <span class="color-chip"></span>
-                                            <span class="color-chip"></span>
                                         </div>
                                     </span>
                                 </div>
@@ -369,7 +369,6 @@
 
                 <div class="sectionbox section5 part">
                     <div class="centerbox">
-
                         <div class="textbox">
                             <h2><span>05.</span>CFM</h2>
                             <div class="concept">
@@ -513,10 +512,8 @@
 
         gsap.registerPlugin(SplitText);
 
-        // gsap.set("h1", { opacity: 1 });
-
+        // title-group은 항상 실행
         let split = SplitText.create(".title-group", { type: "chars" });
-        //now animate each character into place from 20px below, fading in:
         gsap.from(split.chars, {
             y: 20,
             autoAlpha: 0,
@@ -525,15 +522,62 @@
             stagger: 0.05,
             duration: 1
         });
-        let split2 = SplitText.create(".description-box", { type: "chars" });
-        //now animate each character into place from 20px below, fading in:
-        gsap.from(split2.chars, {
-            y: 100,
-            autoAlpha: 0,
-            rotate: 500,
-            letterSpacing: '-0.2em',
-            stagger: 0.01,
-            duration: 0.1
+
+        // description-box 관리 변수
+        let split2;
+        let descBoxOriginalHTML = document.querySelector('.description-box').innerHTML;
+
+        function initDescriptionBox() {
+            const descBox = document.querySelector('.description-box');
+            const windowWidth = window.innerWidth;
+
+            // 기존 SplitText 제거
+            if (split2) {
+                split2.revert();
+            }
+
+            // HTML 복원 (제거된 요소 복구)
+            descBox.innerHTML = descBoxOriginalHTML;
+            descBox.style.display = '';
+
+            if (windowWidth <= 767) {
+                // 767px 이하: 전체 숨김
+                descBox.style.display = 'none';
+            } else {
+                // 768px 이상: 요소 제거 후 SplitText
+                const secondP = descBox.querySelectorAll('p')[1];
+                const firstPSpan = descBox.querySelector('p span');
+
+                if (windowWidth <= 924 && firstPSpan) {
+                    firstPSpan.remove();
+                }
+
+                if (windowWidth <= 1599 && secondP) {
+                    secondP.remove();
+                }
+
+                split2 = SplitText.create(".description-box", { type: "chars" });
+                gsap.from(split2.chars, {
+                    y: 100,
+                    autoAlpha: 0,
+                    rotate: 500,
+                    letterSpacing: '-0.2em',
+                    stagger: 0.01,
+                    duration: 0.1
+                });
+            }
+        }
+
+        // 초기 실행
+        initDescriptionBox();
+
+        // 리사이즈 이벤트 (디바운스 적용)
+        let resizeTimer;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                initDescriptionBox();
+            }, 250); // 0.25초 후 실행 (성능 최적화)
         });
 
 
