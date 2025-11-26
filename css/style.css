@@ -139,7 +139,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 .popup .content ul:first-child { margin-bottom: 100px; } 
 
 /* banner */
-.banner { position: relative;} 
+.banner { position: relative; } 
 .banner h2 { position: absolute; top: 120px; } 
 .banner .content ul { display: flex; flex-direction: column; gap: 50px; align-items: center; } 
 .banner .view { width: 1200px; height: 300px; border: 5px solid #fafafa; box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); position: absolute; left: 50%; top: 150px; transform: translateX(-50%); z-index: 2; } 
@@ -177,7 +177,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 .project-header { margin-bottom: 40px; } 
 .project-title { font-size: clamp(28px, 2.19vw, 42px); font-weight: 700; margin-bottom: 10px; } 
 .project-subtitle { font-size: clamp(16px, 0.94vw, 18px); color: #505050; margin-bottom: 20px; } 
-.project-info { display: flex; gap: 20px 40px; font-size: 14px; } 
+.project-info { display: flex; flex-wrap: wrap; gap: 20px 40px; font-size: 14px; } 
 .info-item { display: flex; gap: 10px; font-size: clamp(16px, 0.94vw, 18px); } 
 .info-label { font-weight: 600; color: #333; } 
 .info-value { color: #505050; } 
@@ -207,7 +207,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 
 /* Section Card Styles (리팩토링된 카드 스타일) */
 .section-card { background: #fafafa; padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); margin-bottom: 55px; transition: all 0.3s ease; cursor: pointer; border-left: 4px solid transparent; border-right: 4px solid transparent; } 
-.section-card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); transform: translateY(-2px); } 
+.section-card:hover { box-shadow: 0 6px 12x rgba(0, 0, 0, 0.12); transform: translateY(-2px); } 
 .section-card.active { border-left: 4px solid #A5B2A2; background: #f9f9f9; } 
 .sub02 .section-card.active { border-left: 4px solid #656565; background: #f9f9f9; } 
 .sub03 .section-card.active { border-left: 4px solid #032753; background: #f9f9f9; } 
@@ -260,7 +260,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 .mobile-preview-item:hover img { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); } 
 
 /* Process 사이드바 패딩 조정 */
-.sub01 #process-sidebar { padding-top: 292px; } 
+#process-sidebar { padding-top: 292px; } 
 
 /* Footer Styles */
 #main footer { position: relative; z-index: 5; width: 100%; height: 100vh; background: #000; } 
@@ -310,15 +310,18 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
 .scroll-top-btn:hover { transform: scale(1.1); } 
 
 @media (max-width: 1599px){
- .centerbox, .poster-container { width: 1360px; } 
+ .centerbox, .poster-container, .detail-container { width: 1360px; } 
  .info-container .centerbox .photo { margin-right: 0; } 
  .info-container .info-item.skill-container { gap: 0; } 
  .sectionbox .visualbox .screen { height: 438px; border-radius: 22px 22px 14px 14px; } 
  .section5 .mobilebox .visualbox2 .screen { height: 370px; top: 16px; left: 72px; border-radius: 24px 16px 20px 18px; transform: rotateY(-26deg); } 
  .banner .view { width: 1100px; height: 275px; } 
  .banner .content ul li img { width: 1100px; } 
- footer .textbox {width: 700px;}
- footer .contact-bubble {right: -100px;}
+ footer .textbox { width: 700px; } 
+ footer .contact-bubble { right: -100px; } 
+ .detail-main { width: 55%; } 
+ .sidebar-content { width: 40%; } 
+#process-sidebar { padding-top: 280px; } 
  }
 
 @media (max-width: 1365px){
@@ -332,9 +335,11 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .sectionbox .textbox .detail .btn-detail { margin-top: 20px; } 
  .banner .view { width: 1000px; height: 250px; } 
  .banner .content ul li img { width: 1000px; } 
- footer .textbox {width: 600px;}
- footer .contact-bubble {right: -150px;}
- }
+ footer .textbox { width: 600px; } 
+ footer .contact-bubble { right: -150px; } 
+ .detail-container { padding-right: 50px; } 
+#process-sidebar { padding-top: 272px; } 
+}
 
  @media (max-width: 1199px){
  .centerbox, .poster-container { width: 1000px; } 
@@ -346,9 +351,14 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .sectionbox .textbox .detail .item .label { width: 120px; } 
  .banner .view { width: 800px; height: 200px; } 
  .banner .content ul li img { width: 800px; } 
- footer .textbox {width: 500px;}
- footer iframe {left: 15%;}
- footer .contact-bubble {right: -150px;}
+ footer .textbox { width: 500px; } 
+ footer iframe { left: 15%; } 
+ footer .contact-bubble { right: -150px; } 
+ .workflow-container { padding: 40px; } 
+ .workflow-title { margin-bottom: 40px; } 
+ .detail-container { padding-right:20px; } 
+#process-sidebar { padding-top: 234px; } 
+.tab-button { padding: 10px 22px; } 
  }
 
 @media (max-width: 1023px){
@@ -363,8 +373,8 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .sectionbox .textbox .detail .btn-detail { margin-top: 10px; } 
  .banner .view { width: 700px; height: 175px; } 
  .banner .content ul li img { width: 700px; } 
- footer .textbox {width: 400px;}
- footer .contact-bubble {right: -250px; bottom: 30px;}
+ footer .textbox { width: 400px; } 
+ footer .contact-bubble { right: -250px; bottom: 30px; } 
  }
 
  @media (max-width: 924px){
@@ -375,12 +385,21 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .sectionbox .textbox { width: 100%; } 
  .bottom-section { margin-top: 20px; } 
  #object1, #object2, .info-container .centerbox .photo { display: none; } 
- .banner h2 { opacity: 0;}
- .banner .content ul {margin-top: 50px;}
- footer .textbox {width: 300px;}
- footer .contact-bubble {right: -280px; bottom: 20px;}
- footer iframe {left: 0; bottom: -40px;}
-
+ .banner h2 { opacity: 0; } 
+ .banner .content ul { margin-top: 50px; } 
+ footer .textbox { width: 300px; } 
+ footer .contact-bubble { right: -280px; bottom: 20px; } 
+ footer iframe { left: 0; bottom: -40px; } 
+ .sub-topmenu { padding: 40px 0 0 0; } 
+ .detail-container { padding: 0 0 40px 0; } 
+ .workflow-container { padding: 0; } 
+ .workflow-timeline::before, .step-number { display: none; } 
+ .workflow-timeline { padding: 0; } 
+ .color-preview { width: 10px; } 
+ .detail-main { width: 50%; } 
+ .sidebar-content { width: 44%; } 
+ #process-sidebar { padding-top: 230px; } 
+ .detail-container { padding-right: 0; } 
  }
 
 @media (max-width: 767px){
@@ -390,10 +409,10 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .info-container .info-item h2 { margin-bottom: 4px; } 
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; } 
  .bottom-section, .sub-info-section { display: none; } 
-    .banner .view { width: 600px; height: 150px; } 
- .banner .content ul li img { width: 600px; }
- footer .textbox {width: 250px;}
- footer .contact-bubble {right: -300px; bottom: 20px;}
+ .banner .view { width: 600px; height: 150px; } 
+ .banner .content ul li img { width: 600px; } 
+ footer .textbox { width: 250px; } 
+ footer .contact-bubble { right: -300px; bottom: 20px; } 
  }
 
  @media (max-width: 600px){
@@ -402,13 +421,12 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .info-container .info-item .skill { margin-bottom: 10px; } 
 .info-container .info-item:nth-child(2) { margin-top: 30px; } 
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; } 
-     .banner .view { width: 450px; height: 112.5px; } 
+ .banner .view { width: 450px; height: 112.5px; } 
  .banner .content ul li img { width: 450px; } 
- footer .centerbox {margin: 50px;}
- footer .textbox {width: 180px;}
- footer .contact-bubble {right: -340px; bottom: 10px;}
-
- }
+ footer .centerbox { margin: 50px; } 
+ footer .textbox { width: 180px; } 
+ footer .contact-bubble { right: -340px; bottom: 10px; } 
+}
 
 
 
@@ -417,9 +435,9 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; } 
  .sectionbox .textbox .detail .item .label { width: 70px; } 
  .sectionbox .textbox .detail .item .color-chip:nth-child(6) { display: none; } 
-      .banner .view { width: 350px; height: 87.5px; } 
+ .banner .view { width: 350px; height: 87.5px; } 
  .banner .content ul li img { width: 350px; } 
-  footer .centerbox {margin: 30px;}
- footer .textbox {width: 160px;}
- footer .contact-bubble {right: -340px; bottom: -20px;}
+ footer .centerbox { margin: 30px; } 
+ footer .textbox { width: 160px; } 
+ footer .contact-bubble { right: -340px; bottom: -20px; } 
  }
