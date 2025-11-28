@@ -42,17 +42,17 @@
         </div>
     </div>
 
-    <div class="detail-container">
-        <div class="detail-main">
-            <div class="tab-container">
-                <div class="tab-buttons">
-                    <button class="tab-button active" onclick="showTab('process')">Process</button>
-                    <button class="tab-button" onclick="showTab('main')">Main</button>
-                    <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
-                    <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
-                    <button class="tab-button" onclick="showTab('sub3')">Sub page 3</button>
-                </div>
+    <div class="detail-container centerbox">
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="showTab('process')">Process</button>
+            <button class="tab-button" onclick="showTab('main')">Main</button>
+            <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
+            <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
+            <button class="tab-button" onclick="showTab('sub3')">Sub page 3</button>
+        </div>
 
+        <div class="content-wrapper">
+            <div class="detail-main">
                 <!-- Process Tab -->
                 <div id="process-tab" class="tab-content active">
                     <div class="workflow-container">
@@ -166,273 +166,290 @@
                         <img src="images/sub03/sub3_visual1.png" alt="Sub Page 3" class="page-preview-image">
                     </div>
                 </div>
+
             </div>
-        </div>
 
-        <!-- Process Sidebar -->
-        <div class="detail-sidebar-process sidebar-content active" id="process-sidebar">
-            <div class="section-card">
-                <div class="card-header">
-                    <h4 class="card-title">Style Guide</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">프로젝트의 일관성을 위한 디자인 시스템</p>
+            <!-- Process Sidebar -->
+            <div class="detail-sidebar-process sidebar-content active" id="process-sidebar">
+                <div class="section-card">
+                    <div class="card-header">
+                        <h4 class="card-title">Style Guide</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">프로젝트의 일관성을 위한 디자인 시스템</p>
 
-                    <div class="style-guide-section">
-                        <h5>Color Palette</h5>
-                        <div class="color-palette-detail">
-                            <div class="color-item">
-                                <span class="color-preview" style="background: #032753;"></span>
-                                <div class="color-info">
-                                    <strong>#032753</strong>
-                                    <p>Primary Blue - 전문성과 신뢰감을 나타내는 메인 컬러</p>
+                        <div class="style-guide-section">
+                            <h5>Color Palette</h5>
+                            <div class="color-palette-detail">
+                                <div class="color-item">
+                                    <span class="color-preview" style="background: #032753;"></span>
+                                    <div class="color-info">
+                                        <strong>#032753</strong>
+                                        <p>Primary Blue - 전문성과 신뢰감을 나타내는 메인 컬러</p>
+                                    </div>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-preview" style="background: #ACBFFF;"></span>
+                                    <div class="color-info">
+                                        <strong>#ACBFFF</strong>
+                                        <p>Light Blue - 포인트 및 강조 색상</p>
+                                    </div>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-preview" style="background: #1a1a1a;"></span>
+                                    <div class="color-info">
+                                        <strong>#1a1a1a</strong>
+                                        <p>Dark Gray - 본문 텍스트</p>
+                                    </div>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-preview" style="background: #FAFAFA;"></span>
+                                    <div class="color-info">
+                                        <strong>#FAFAFA</strong>
+                                        <p>Background - 배경색</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="color-item">
-                                <span class="color-preview" style="background: #ACBFFF;"></span>
-                                <div class="color-info">
-                                    <strong>#ACBFFF</strong>
-                                    <p>Light Blue - 포인트 및 강조 색상</p>
-                                </div>
-                            </div>
-                            <div class="color-item">
-                                <span class="color-preview" style="background: #1a1a1a;"></span>
-                                <div class="color-info">
-                                    <strong>#1a1a1a</strong>
-                                    <p>Dark Gray - 본문 텍스트</p>
-                                </div>
-                            </div>
-                            <div class="color-item">
-                                <span class="color-preview" style="background: #FAFAFA;"></span>
-                                <div class="color-info">
-                                    <strong>#FAFAFA</strong>
-                                    <p>Background - 배경색</p>
+                        </div>
+
+                        <div class="style-guide-section">
+                            <h5>Typography</h5>
+                            <div class="typography-detail">
+                                <div class="font-item">
+                                    <strong>Pretendard</strong>
+                                    <p>본문 텍스트 - 가독성과 전문성을 동시에 표현</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="style-guide-section">
-                        <h5>Typography</h5>
-                        <div class="typography-detail">
-                            <div class="font-item">
-                                <strong>Pretendard</strong>
-                                <p>본문 텍스트 - 가독성과 전문성을 동시에 표현</p>
-                            </div>
+                <div class="section-card">
+                    <div class="card-header">
+                        <h4 class="card-title">Design Decisions</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">주요 디자인 결정과 그 이유</p>
+
+                        <div class="decision-item">
+                            <h5>왜 블루 컬러인가?</h5>
+                            <p>의료업계의 특성상 신뢰성과 전문성을 전달하는 것이 가장 중요합니다. 블루 컬러는 안정감, 신뢰, 청결함을 상징하며, 전 세계적으로 의료 및 제약 분야에서 가장
+                                많이
+                                사용되는 색상입니다. #032753의 진한 네이비 블루로 권위 있는 느낌을 주고, #ACBFFF의 밝은 블루로 포인트를 주어 딱딱하지 않은 균형감을
+                                만들었습니다.
+                            </p>
+                        </div>
+
+                        <div class="decision-item">
+                            <h5>실제 연구 현장 이미지 활용</h5>
+                            <p>제약회사의 전문성을 강조하기 위해 실험실, 연구시설, 제조 현장의 실제 이미지를 사용했습니다. 이는 사용자에게 기업의 R&D 역량과 품질 관리 시스템에 대한
+                                신뢰를
+                                심어주며, 추상적인 이미지보다 훨씬 설득력 있는 메시지를 전달합니다.</p>
+                        </div>
+
+                        <div class="decision-item">
+                            <h5>명확한 정보 계층 구조</h5>
+                            <p>의료진과 환자가 필요한 정보에 빠르게 접근할 수 있도록 직관적인 네비게이션 구조를 설계했습니다. 제품 정보는 테이블 형태로 한눈에 비교 가능하게 하고, ESG
+                                자료는
+                                카드 레이아웃으로 시각적 탐색이 용이하도록 구성했습니다.</p>
+                        </div>
+
+                        <div class="decision-item">
+                            <h5>스크롤 애니메이션</h5>
+                            <p>Intersection Observer API를 활용하여 사용자가 스크롤할 때 콘텐츠가 자연스럽게 나타나도록 했습니다. 이는 페이지에 생동감을 더하고, 사용자의
+                                주목도를 높이며, 콘텐츠를 순차적으로 소비하도록 유도하는 효과가 있습니다.</p>
+                        </div>
+
+                        <div class="decision-item">
+                            <h5>Google Maps 연동</h5>
+                            <p>글로벌 네트워크 섹션에서 Google Maps API를 연동하여 실제 본사와 연구시설 위치를 보여줍니다. 이는 투명성을 높이고, 사용자가 실제로 방문하거나
+                                연락할 수
+                                있는 정보를 제공하여 신뢰도를 향상시킵니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="section-card">
-                <div class="card-header">
-                    <h4 class="card-title">Design Decisions</h4>
+            <!-- Main Sidebar -->
+            <div class="detail-sidebar-main sidebar-content" id="main-sidebar">
+                <div class="section-card" data-section="visual">
+                    <div class="card-header">
+                        <h4 class="card-title">Visual Section</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">메인 비주얼에서 기업의 핵심 메시지를 강조합니다. 간결한 카피와 CTA 버튼을 배치하여
+                            사용자가 바로 상세 정보로 이동할 수 있도록 유도했습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/main01_01.png" alt="Visual Section">
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">주요 디자인 결정과 그 이유</p>
 
-                    <div class="decision-item">
-                        <h5>왜 블루 컬러인가?</h5>
-                        <p>의료업계의 특성상 신뢰성과 전문성을 전달하는 것이 가장 중요합니다. 블루 컬러는 안정감, 신뢰, 청결함을 상징하며, 전 세계적으로 의료 및 제약 분야에서 가장 많이
-                            사용되는 색상입니다. #032753의 진한 네이비 블루로 권위 있는 느낌을 주고, #ACBFFF의 밝은 블루로 포인트를 주어 딱딱하지 않은 균형감을 만들었습니다.
+                <div class="section-card" data-section="section1">
+                    <div class="card-header">
+                        <h4 class="card-title">Section 1</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">3개의 핵심 사업 영역을 카드 형태로 제시합니다. 사이트의 모든 카드 섹션은 스크롤 시 순차적으로
+                            나타나는 애니메이션을 적용하여 시각적 흥미를 더했습니다. 호버 시 이미지에 확대 효과를 주어 인터랙티브한 경험을 제공합니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/main02_01.png" alt="Section 1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" data-section="section3">
+                    <div class="card-header">
+                        <h4 class="card-title">Section 3</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">뉴스와 공지사항을 구분하여 보여줄 수 있도록 2컬럼 레이아웃을 적용하였고, 날짜와 제목을 명확하게 표시하여 최신 정보를
+                            빠르게
+                            확인할 수 있도록 했습니다. 전체 배경색을 이미지로 구성하여 해당 섹션이 중요한 업데이트 영역임을 시각적으로 강조했습니다. 호버한 기사가 강조되도록 CSS 효과를
+                            주었습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/main03_01.png" alt="Section 3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" data-section="section4">
+                    <div class="card-header">
+                        <h4 class="card-title">Section 4</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Google Maps를 iframe으로 삽입하여 본사 위치를 실시간으로 확인할 수 있습니다. iframe에
+                            loading="lazy" 속성을 적용하여 사용자가 해당 섹션까지 스크롤했을 때 지도가 로드되도록 하여 초기 페이지 로딩 속도를 개선하고 불필요한 리소스
+                            낭비를 방지했습니다. 지도 하단에는 위치 안내 텍스트와 문의 페이지로 이동하는 버튼을 배치하여 사용자가 추가 정보를 얻을 수 있도록 했습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/main04_01.png" alt="Section 4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" data-section="footer">
+                    <div class="card-header">
+                        <h4 class="card-title">Header & Footer</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Header와 Footer를 별도 HTML 파일로 분리하고 JavaScript fetch API를 통해 모든 페이지에서
+                            불러올 수
+                            있도록 구현했습니다. 이를 통해 코드 재사용성을 높이고 유지보수를 용이하게 했습니다. Footer에는 로고, 회사 정보, 연락처, 저작권 정보를 포함했으며, 고객상담
+                            대표번호를 강조하여 문의가 쉽도록 구성했습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/main05_01.png" alt="Header & Footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub Page 1 Sidebar -->
+            <div class="detail-sidebar-sub sidebar-content" id="sub1-sidebar">
+                <div class="section-card" data-section="mission-vision">
+                    <div class="card-header">
+                        <h4 class="card-title">All Sections</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">기업의 사명과 비전을 각각 풀스크린 이미지 위에 텍스트 오버레이 형태로 제시합니다. 사용자가 스크롤하여 해당 섹션에
+                            진입하면
+                            텍스트 박스가 페이드인 되는 애니메이션을 JavaScript의 Intersection Observer API를 활용하여 구현했습니다. 이를 통해 콘텐츠에 대한
+                            주목도를
+                            높이고, 각 섹션의 핵심 메시지들을 효과적으로
+                            전달합니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/sub01_01.png" alt="All Sections">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" data-section="statistics">
+                    <div class="card-header">
+                        <h4 class="card-title">Statistics Section</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">"100여 개국"이라는 글로벌 허가 실적을 숫자 카운터 애니메이션으로 표현합니다. 사용자가 해당 섹션에 스크롤하면 0부터
+                            100까지 숫자가 증가하는 효과를 JavaScript로 구현하여, 성과를 역동적으로 보여줍니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/sub01_02_01.png" alt="Statistics">
+                            <img src="images/sub03/sub01_02_02.png" alt="Statistics">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub Page 2 Sidebar -->
+            <div class="detail-sidebar-sub sidebar-content" id="sub2-sidebar">
+                <div class="section-card" data-section="product-visual">
+                    <div class="card-header">
+                        <h4 class="card-title">Product Visual</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">제품 페이지 상단에 메뉴와 대표 이미지를 배치했습니다. 바이오의약품, 케미컬의약품, 제품소식 등 카테고리를 명확하게
+                            구분하여
+                            사용자가 원하는 정보를 빠르게 찾을 수 있도록 했습니다. 현재 활성화된 메뉴는 '.on' 클래스를 통해 시각적으로 강조하여 사용자가 현재 위치를 쉽게 인지할 수
+                            있도록
+                            작업했습니다.
                         </p>
-                    </div>
-
-                    <div class="decision-item">
-                        <h5>실제 연구 현장 이미지 활용</h5>
-                        <p>제약회사의 전문성을 강조하기 위해 실험실, 연구시설, 제조 현장의 실제 이미지를 사용했습니다. 이는 사용자에게 기업의 R&D 역량과 품질 관리 시스템에 대한 신뢰를
-                            심어주며, 추상적인 이미지보다 훨씬 설득력 있는 메시지를 전달합니다.</p>
-                    </div>
-
-                    <div class="decision-item">
-                        <h5>명확한 정보 계층 구조</h5>
-                        <p>의료진과 환자가 필요한 정보에 빠르게 접근할 수 있도록 직관적인 네비게이션 구조를 설계했습니다. 제품 정보는 테이블 형태로 한눈에 비교 가능하게 하고, ESG 자료는
-                            카드 레이아웃으로 시각적 탐색이 용이하도록 구성했습니다.</p>
-                    </div>
-
-                    <div class="decision-item">
-                        <h5>스크롤 애니메이션</h5>
-                        <p>Intersection Observer API를 활용하여 사용자가 스크롤할 때 콘텐츠가 자연스럽게 나타나도록 했습니다. 이는 페이지에 생동감을 더하고, 사용자의
-                            주목도를 높이며, 콘텐츠를 순차적으로 소비하도록 유도하는 효과가 있습니다.</p>
-                    </div>
-
-                    <div class="decision-item">
-                        <h5>Google Maps 연동</h5>
-                        <p>글로벌 네트워크 섹션에서 Google Maps API를 연동하여 실제 본사와 연구시설 위치를 보여줍니다. 이는 투명성을 높이고, 사용자가 실제로 방문하거나 연락할 수
-                            있는 정보를 제공하여 신뢰도를 향상시킵니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/sub02_01_01.png" alt="Product Visual">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Main Sidebar -->
-        <div class="detail-sidebar-main sidebar-content" id="main-sidebar">
-            <div class="section-card" data-section="visual">
-                <div class="card-header">
-                    <h4 class="card-title">Visual Section</h4>
+                <div class="section-card" data-section="product-table">
+                    <div class="card-header">
+                        <h4 class="card-title">Product Table</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">제품 정보를 table 코드를 사용하여 체계적으로 구조화했습니다. 표의 헤더와 본문을 명확히 구분하여 접근성을 높였으며,
+                            각 셀의
+                            의미를 정확히 전달할 수 있도록 시맨틱 마크업을 적용했습니다. 허가기관(EMA, FDA, MFDS)은 텍스트와 아이콘을 함께 사용하여 한눈에 글로벌 승인 현황을
+                            파악할 수
+                            있으며, 바이오시밀러와 바이오신약은 탭 버튼으로 구분하여 사용자가 관심 있는 카테고리를 선택적으로 탐색할 수 있도록 구현했습니다.</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">메인 비주얼에서 기업의 핵심 메시지를 강조합니다. 간결한 카피와 CTA 버튼을 배치하여
-                        사용자가 바로 상세 정보로 이동할 수 있도록 유도했습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/main01_01.png" alt="Visual Section">
+
+                <div class="section-card" data-section="disclaimer">
+                    <div class="card-header">
+                        <h4 class="card-title">Disclaimer</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">제품 정보는 의료 정보용으로만 사용되며 홍보나 판매를 목적으로 하지 않는다는 법적 고지사항을 하단에 명시했습니다. 이는
+                            의료 관련
+                            웹사이트의 필수 요구사항으로, 기업의 책임 소재를 명확히 하고 사용자에게 올바른 정보 활용을 안내하여 신뢰도를 높입니다.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="section-card" data-section="section1">
-                <div class="card-header">
-                    <h4 class="card-title">Section 1</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">3개의 핵심 사업 영역을 카드 형태로 제시합니다. 사이트의 모든 카드 섹션은 스크롤 시 순차적으로
-                        나타나는 애니메이션을 적용하여 시각적 흥미를 더했습니다. 호버 시 이미지에 확대 효과를 주어 인터랙티브한 경험을 제공합니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/main02_01.png" alt="Section 1">
+            <!-- Sub Page 3 Sidebar -->
+            <div class="detail-sidebar-sub sidebar-content" id="sub3-sidebar">
+                <div class="section-card" data-section="esg-menu">
+                    <div class="card-header">
+                        <h4 class="card-title">ESG Menu</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">지속가능 경영 보고서, ESG 평가등급, 인증서 등으로 구분된 메뉴를 상단에 배치했습니다. 현재 활성화된 메뉴는 시각적으로
+                            강조하여 사용자가 현재 위치를 쉽게 인지할 수 있도록 했습니다.</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="section-card" data-section="section3">
-                <div class="card-header">
-                    <h4 class="card-title">Section 3</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">뉴스와 공지사항을 구분하여 보여줄 수 있도록 2컬럼 레이아웃을 적용하였고, 날짜와 제목을 명확하게 표시하여 최신 정보를 빠르게
-                        확인할 수 있도록 했습니다. 전체 배경색을 이미지로 구성하여 해당 섹션이 중요한 업데이트 영역임을 시각적으로 강조했습니다. 호버한 기사가 강조되도록 CSS 효과를
-                        주었습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/main03_01.png" alt="Section 3">
+                <div class="section-card" data-section="esg-cards">
+                    <div class="card-header">
+                        <h4 class="card-title">ESG Report Cards</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">연도별 ESG 보고서를 카드 형태로 나열했습니다. 각 카드는 이미지, 제목, 발행 날짜, CTA 버튼으로 구성되어 있으며,
+                            호버
+                            시 확대 효과를 CSS로 적용하여 클릭을 유도합니다. 카드가 화면에 진입할 때 순차적으로 나타나도록 Intersection Observer API를 사용하여
+                            페이드인과
+                            슬라이드업 애니메이션을 구현했습니다. 각 카드는 0.1초 간격으로 등장하여 리듬감 있는 시각적 경험을 제공합니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub03/sub03_01_01.png" alt="ESG Cards">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section-card" data-section="section4">
-                <div class="card-header">
-                    <h4 class="card-title">Section 4</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Google Maps를 iframe으로 삽입하여 본사 위치를 실시간으로 확인할 수 있습니다. iframe에
-                        loading="lazy" 속성을 적용하여 사용자가 해당 섹션까지 스크롤했을 때 지도가 로드되도록 하여 초기 페이지 로딩 속도를 개선하고 불필요한 리소스
-                        낭비를 방지했습니다. 지도 하단에는 위치 안내 텍스트와 문의 페이지로 이동하는 버튼을 배치하여 사용자가 추가 정보를 얻을 수 있도록 했습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/main04_01.png" alt="Section 4">
-                    </div>
-                </div>
             </div>
-
-            <div class="section-card" data-section="footer">
-                <div class="card-header">
-                    <h4 class="card-title">Header & Footer</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Header와 Footer를 별도 HTML 파일로 분리하고 JavaScript fetch API를 통해 모든 페이지에서 불러올 수
-                        있도록 구현했습니다. 이를 통해 코드 재사용성을 높이고 유지보수를 용이하게 했습니다. Footer에는 로고, 회사 정보, 연락처, 저작권 정보를 포함했으며, 고객상담
-                        대표번호를 강조하여 문의가 쉽도록 구성했습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/main05_01.png" alt="Header & Footer">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sub Page 1 Sidebar -->
-        <div class="detail-sidebar-sub sidebar-content" id="sub1-sidebar">
-            <div class="section-card" data-section="mission-vision">
-                <div class="card-header">
-                    <h4 class="card-title">All Sections</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">기업의 사명과 비전을 각각 풀스크린 이미지 위에 텍스트 오버레이 형태로 제시합니다. 사용자가 스크롤하여 해당 섹션에 진입하면
-                        텍스트 박스가 페이드인 되는 애니메이션을 JavaScript의 Intersection Observer API를 활용하여 구현했습니다. 이를 통해 콘텐츠에 대한 주목도를
-                        높이고, 각 섹션의 핵심 메시지들을 효과적으로
-                        전달합니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/sub01_01.png" alt="All Sections">
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-card" data-section="statistics">
-                <div class="card-header">
-                    <h4 class="card-title">Statistics Section</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">"100여 개국"이라는 글로벌 허가 실적을 숫자 카운터 애니메이션으로 표현합니다. 사용자가 해당 섹션에 스크롤하면 0부터
-                        100까지 숫자가 증가하는 효과를 JavaScript로 구현하여, 성과를 역동적으로 보여줍니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/sub01_02_01.png" alt="Statistics">
-                        <img src="images/sub03/sub01_02_02.png" alt="Statistics">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sub Page 2 Sidebar -->
-        <div class="detail-sidebar-sub sidebar-content" id="sub2-sidebar">
-            <div class="section-card" data-section="product-visual">
-                <div class="card-header">
-                    <h4 class="card-title">Product Visual</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">제품 페이지 상단에 메뉴와 대표 이미지를 배치했습니다. 바이오의약품, 케미컬의약품, 제품소식 등 카테고리를 명확하게 구분하여
-                        사용자가 원하는 정보를 빠르게 찾을 수 있도록 했습니다. 현재 활성화된 메뉴는 '.on' 클래스를 통해 시각적으로 강조하여 사용자가 현재 위치를 쉽게 인지할 수 있도록
-                        작업했습니다.
-                    </p>
-                    <div class="card-preview">
-                        <img src="images/sub03/sub02_01_01.png" alt="Product Visual">
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-card" data-section="product-table">
-                <div class="card-header">
-                    <h4 class="card-title">Product Table</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">제품 정보를 table 코드를 사용하여 체계적으로 구조화했습니다. 표의 헤더와 본문을 명확히 구분하여 접근성을 높였으며, 각 셀의
-                        의미를 정확히 전달할 수 있도록 시맨틱 마크업을 적용했습니다. 허가기관(EMA, FDA, MFDS)은 텍스트와 아이콘을 함께 사용하여 한눈에 글로벌 승인 현황을 파악할 수
-                        있으며, 바이오시밀러와 바이오신약은 탭 버튼으로 구분하여 사용자가 관심 있는 카테고리를 선택적으로 탐색할 수 있도록 구현했습니다.</p>
-                </div>
-            </div>
-
-            <div class="section-card" data-section="disclaimer">
-                <div class="card-header">
-                    <h4 class="card-title">Disclaimer</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">제품 정보는 의료 정보용으로만 사용되며 홍보나 판매를 목적으로 하지 않는다는 법적 고지사항을 하단에 명시했습니다. 이는 의료 관련
-                        웹사이트의 필수 요구사항으로, 기업의 책임 소재를 명확히 하고 사용자에게 올바른 정보 활용을 안내하여 신뢰도를 높입니다.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sub Page 3 Sidebar -->
-        <div class="detail-sidebar-sub sidebar-content" id="sub3-sidebar">
-            <div class="section-card" data-section="esg-menu">
-                <div class="card-header">
-                    <h4 class="card-title">ESG Menu</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">지속가능 경영 보고서, ESG 평가등급, 인증서 등으로 구분된 메뉴를 상단에 배치했습니다. 현재 활성화된 메뉴는 시각적으로
-                        강조하여 사용자가 현재 위치를 쉽게 인지할 수 있도록 했습니다.</p>
-                </div>
-            </div>
-
-            <div class="section-card" data-section="esg-cards">
-                <div class="card-header">
-                    <h4 class="card-title">ESG Report Cards</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">연도별 ESG 보고서를 카드 형태로 나열했습니다. 각 카드는 이미지, 제목, 발행 날짜, CTA 버튼으로 구성되어 있으며, 호버
-                        시 확대 효과를 CSS로 적용하여 클릭을 유도합니다. 카드가 화면에 진입할 때 순차적으로 나타나도록 Intersection Observer API를 사용하여 페이드인과
-                        슬라이드업 애니메이션을 구현했습니다. 각 카드는 0.1초 간격으로 등장하여 리듬감 있는 시각적 경험을 제공합니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub03/sub03_01_01.png" alt="ESG Cards">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 

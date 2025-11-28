@@ -42,16 +42,15 @@
     </div>
 
     <div class="detail-container centerbox">
-        <div class="detail-main">
-            <div class="tab-container">
-                <div class="tab-buttons">
-                    <button class="tab-button active" onclick="showTab('process')">Process</button>
-                    <button class="tab-button" onclick="showTab('main')">Main</button>
-                    <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
-                    <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
-                    <button class="tab-button" onclick="showTab('mobile')">Mobile</button>
-                </div>
-
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="showTab('process')">Process</button>
+            <button class="tab-button" onclick="showTab('main')">Main</button>
+            <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
+            <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
+            <button class="tab-button" onclick="showTab('mobile')">Mobile</button>
+        </div>
+        <div class="content-wrapper">
+            <div class="detail-main">
                 <!-- Process Tab -->
                 <div id="process-tab" class="tab-content active">
                     <div class="workflow-container">
@@ -173,250 +172,259 @@
                         </div>
                     </div>
                 </div>
+
             </div>
-        </div>
+            <!-- Process Sidebar -->
+            <div class="detail-sidebar-process sidebar-content active" id="process-sidebar">
+                <div class="section-card">
+                    <div class="card-header">
+                        <h4 class="card-title">Style Guide</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">프로젝트의 일관성을 위한 디자인 시스템</p>
 
-        <!-- Process Sidebar -->
-        <div class="detail-sidebar-process sidebar-content active" id="process-sidebar">
-            <div class="section-card">
-                <div class="card-header">
-                    <h4 class="card-title">Style Guide</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">프로젝트의 일관성을 위한 디자인 시스템</p>
-
-                    <div class="style-guide-section">
-                        <h5>Color Palette</h5>
-                        <div class="color-palette-detail">
-                            <div class="color-item">
-                                <span class="color-preview" style="background: #A5B2A2;"></span>
-                                <div class="color-info">
-                                    <strong>#A5B2A2</strong>
-                                    <p>Primary - 제주의 자연, 브랜드 메인 컬러</p>
+                        <div class="style-guide-section">
+                            <h5>Color Palette</h5>
+                            <div class="color-palette-detail">
+                                <div class="color-item">
+                                    <span class="color-preview" style="background: #A5B2A2;"></span>
+                                    <div class="color-info">
+                                        <strong>#A5B2A2</strong>
+                                        <p>Primary - 제주의 자연, 브랜드 메인 컬러</p>
+                                    </div>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-preview" style="background: #333333;"></span>
+                                    <div class="color-info">
+                                        <strong>#333333</strong>
+                                        <p>Text - 본문 텍스트</p>
+                                    </div>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-preview" style="background: #FAF9F6;"></span>
+                                    <div class="color-info">
+                                        <strong>#FAF9F6</strong>
+                                        <p>Background - 배경색</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="color-item">
-                                <span class="color-preview" style="background: #333333;"></span>
-                                <div class="color-info">
-                                    <strong>#333333</strong>
-                                    <p>Text - 본문 텍스트</p>
+                        </div>
+
+                        <div class="style-guide-section">
+                            <h5>Typography</h5>
+                            <div class="typography-detail">
+                                <div class="font-item">
+                                    <strong>GowoonDodum</strong>
+                                    <p>본문 텍스트 - 가독성과 따뜻한 느낌</p>
                                 </div>
-                            </div>
-                            <div class="color-item">
-                                <span class="color-preview" style="background: #FAF9F6;"></span>
-                                <div class="color-info">
-                                    <strong>#FAF9F6</strong>
-                                    <p>Background - 배경색</p>
+                                <div class="font-item">
+                                    <strong>Prata</strong>
+                                    <p>제목 텍스트 - 고급스럽고 우아한 느낌</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="style-guide-section">
-                        <h5>Typography</h5>
-                        <div class="typography-detail">
-                            <div class="font-item">
-                                <strong>GowoonDodum</strong>
-                                <p>본문 텍스트 - 가독성과 따뜻한 느낌</p>
-                            </div>
-                            <div class="font-item">
-                                <strong>Prata</strong>
-                                <p>제목 텍스트 - 고급스럽고 우아한 느낌</p>
-                            </div>
+                <div class="section-card">
+                    <div class="card-header">
+                        <h4 class="card-title">Design Decisions</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">주요 디자인 결정과 그 이유</p>
+
+                        <div class="decision-item">
+                            <h5>왜 #A5B2A2 컬러인가?</h5>
+                            <p>'당신의 색감'이라는 브랜드 컨셉과 제주의 자연(바다와 숲 사이의 색)을 표현. 따뜻하면서도 차분한 느낌으로 브랜드의 감성을 담았습니다.</p>
+                        </div>
+
+                        <div class="decision-item">
+                            <h5>모바일 반응형 작업</h5>
+                            <p>웨딩 관련 문의는 대부분 모바일에서 이루어질 것으로 예측하고, 모바일 접근성을 고려하여 반응형 웹으로 구축했습니다.</p>
+                        </div>
+
+                        <div class="decision-item">
+                            <h5>갤러리 중심 레이아웃</h5>
+                            <p>스냅/영상 전문 업체의 특성상 비주얼이 가장 중요한 요소이므로, 사진이 돋보이도록 갤러리를 메인으로 배치했습니다.</p>
+                        </div>
+
+                        <div class="decision-item">
+                            <h5>jQuery 애니메이션</h5>
+                            <p>가벼운 인터랙션과 브라우저 호환성을 고려하여 jQuery를 선택했습니다. 사진이 촬영되듯 나타나는 효과로 브랜드 특성을 표현했습니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="section-card">
-                <div class="card-header">
-                    <h4 class="card-title">Design Decisions</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">주요 디자인 결정과 그 이유</p>
-
-                    <div class="decision-item">
-                        <h5>왜 #A5B2A2 컬러인가?</h5>
-                        <p>'당신의 색감'이라는 브랜드 컨셉과 제주의 자연(바다와 숲 사이의 색)을 표현. 따뜻하면서도 차분한 느낌으로 브랜드의 감성을 담았습니다.</p>
+            <!-- Main Sidebar -->
+            <div class="detail-sidebar-main sidebar-content" id="main-sidebar">
+                <div class="section-card" data-section="visual">
+                    <div class="card-header">
+                        <h4 class="card-title">Visual</h4>
                     </div>
-
-                    <div class="decision-item">
-                        <h5>모바일 반응형 작업</h5>
-                        <p>웨딩 관련 문의는 대부분 모바일에서 이루어질 것으로 예측하고, 모바일 접근성을 고려하여 반응형 웹으로 구축했습니다.</p>
-                    </div>
-
-                    <div class="decision-item">
-                        <h5>갤러리 중심 레이아웃</h5>
-                        <p>스냅/영상 전문 업체의 특성상 비주얼이 가장 중요한 요소이므로, 사진이 돋보이도록 갤러리를 메인으로 배치했습니다.</p>
-                    </div>
-
-                    <div class="decision-item">
-                        <h5>jQuery 애니메이션</h5>
-                        <p>가벼운 인터랙션과 브라우저 호환성을 고려하여 jQuery를 선택했습니다. 사진이 촬영되듯 나타나는 효과로 브랜드 특성을 표현했습니다.</p>
+                    <div class="card-body">
+                        <p class="card-description">메인 화면에 가득 차있는 영상이 스크롤을 내리면 자동으로 90%의 비율로 작아지면서, 외곽은 라운드로 바뀌도록 하여 하단의
+                            섹션과
+                            잘 어우러지도록 jQuery로 구현하였습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub01/main_01.png" alt="Visual Section">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Main Sidebar -->
-        <div class="detail-sidebar-main sidebar-content" id="main-sidebar">
-            <div class="section-card" data-section="visual">
-                <div class="card-header">
-                    <h4 class="card-title">Visual</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">메인 화면에 가득 차있는 영상이 스크롤을 내리면 자동으로 90%의 비율로 작아지면서, 외곽은 라운드로 바뀌도록 하여 하단의 섹션과
-                        잘 어우러지도록 jQuery로 구현하였습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub01/main_01.png" alt="Visual Section">
+                <div class="section-card" data-section="section1">
+                    <div class="card-header">
+                        <h4 class="card-title">Section1</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">작은 이미지를 클릭하거나 호버하면 왼쪽 큰 섹션에 이미지가 보이고, 클릭하지 않더라도 자동으로 차례대로 보이도록
+                            jQuery로
+                            구현하였습니다. 스냅/영상 전문 업체인 브랜드의 특성에 맞춰 사진이 찍히는듯한 효과를 jQuery로 구현하였습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub01/main_02_01.png" alt="Section 1">
+                            <img src="images/sub01/main_02_02.png" alt="Section 1 Detail">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section-card" data-section="section1">
-                <div class="card-header">
-                    <h4 class="card-title">Section1</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">작은 이미지를 클릭하거나 호버하면 왼쪽 큰 섹션에 이미지가 보이고, 클릭하지 않더라도 자동으로 차례대로 보이도록 jQuery로
-                        구현하였습니다. 스냅/영상 전문 업체인 브랜드의 특성에 맞춰 사진이 찍히는듯한 효과를 jQuery로 구현하였습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub01/main_02_01.png" alt="Section 1">
-                        <img src="images/sub01/main_02_02.png" alt="Section 1 Detail">
+                <div class="section-card" data-section="section2">
+                    <div class="card-header">
+                        <h4 class="card-title">Section2</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">사용자의 스크롤 컨트롤에 맞춰 이미지가 부드럽게 한 장씩 올라오는듯한 효과를 jQuery로 구현하였습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub01/main_03.png" alt="Section 2">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="section-card" data-section="section2">
-                <div class="card-header">
-                    <h4 class="card-title">Section2</h4>
+                <div class="section-card" data-section="section3">
+                    <div class="card-header">
+                        <h4 class="card-title">Section3</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Swiper-Slide를 사용하여 대표 사진을 넣고, 페이지네이션과 버튼을 이용하여 사용자가 사진을 쉽게 선택하여 볼 수
+                            있도록
+                            구현하였습니다. 또한, 사진을 직접 넘기지 않더라도 자동으로 무한 재생 가능하도록 infinity-loop 버전을 사용하였습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub01/main_04_01.png" alt="Section 3">
+                            <img src="images/sub01/main_04_02.png" alt="Section 3">
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">사용자의 스크롤 컨트롤에 맞춰 이미지가 부드럽게 한 장씩 올라오는듯한 효과를 jQuery로 구현하였습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub01/main_03.png" alt="Section 2">
+
+                <div class="section-card" data-section="footer">
+                    <div class="card-header">
+                        <h4 class="card-title">Footer</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">연락처 정보와 소셜미디어 및 오픈채팅 링크를 포함한 푸터로 사용자가 업체측으로 쉽게 연락할 수 있도록 구성했습니다.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="section-card" data-section="section3">
-                <div class="card-header">
-                    <h4 class="card-title">Section3</h4>
+            <!-- Sub Page 1 Sidebar -->
+            <div class="detail-sidebar-sub sidebar-content" id="sub1-sidebar">
+                <div class="section-card" data-section="header">
+                    <div class="card-header">
+                        <h4 class="card-title">Header</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">포트폴리오 섹션은 업체의 특성에 맞춰 갤러리를 중심으로 구성했습니다. 메인과 동일한 브랜딩을 유지하면서도 갤러리에 최적화된
+                            레이아웃을 적용했습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub01/sub1_01.png" alt="Header">
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">Swiper-Slide를 사용하여 대표 사진을 넣고, 페이지네이션과 버튼을 이용하여 사용자가 사진을 쉽게 선택하여 볼 수 있도록
-                        구현하였습니다. 또한, 사진을 직접 넘기지 않더라도 자동으로 무한 재생 가능하도록 infinity-loop 버전을 사용하였습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub01/main_04_01.png" alt="Section 3">
-                        <img src="images/sub01/main_04_02.png" alt="Section 3">
+
+                <div class="section-card" data-section="gallery">
+                    <div class="card-header">
+                        <h4 class="card-title">Gallery Section</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">작품 이미지를 최적화하여 배치하고, 라이트박스 기능을 통해 사용자가 큰 화면으로 감상할 수 있도록 구현했습니다.
+                            클라이언트가 새
+                            이미지 파일들을 기존의 파일과 동일한 이름을 사용하여 업데이트하면 새로운 사진으로 업데이트 되도록 구현했고, 새로고침시 일정 비율로 랜덤 배치되도록 구성하여 감각적인
+                            느낌을
+                            더하였습니다.</p>
+                        <div class="card-preview">
+                            <img src="images/sub01/sub1_02.png" alt="Gallery">
+                            <img src="images/sub01/sub1_02_01.png" alt="Gallery Detail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" data-section="navigation">
+                    <div class="card-header">
+                        <h4 class="card-title">Navigation</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">야외와 본식, 스냅과 필름 등 카테고리별로 작품을 분류하여 사용자가 원하는 스타일의 작품을 쉽게 찾을 수 있도록
+                            구성했습니다.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="section-card" data-section="footer">
-                <div class="card-header">
-                    <h4 class="card-title">Footer</h4>
+            <!-- Sub Page 2 Sidebar -->
+            <div class="detail-sidebar-sub sidebar-content" id="sub2-sidebar">
+                <div class="section-card" data-section="introduction">
+                    <div class="card-header">
+                        <h4 class="card-title">Introduction Section</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">Brand Story는 업체 소개와 추구하는 방향성에 관한 정보를 담고 있습니다. About/Vision으로 섹션을
+                            나누고, 각
+                            페이지에서는 스토리텔링을 통해 브랜드의 가치와 철학을 담을 수 있도록 구성했습니다.</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">연락처 정보와 소셜미디어 및 오픈채팅 링크를 포함한 푸터로 사용자가 업체측으로 쉽게 연락할 수 있도록 구성했습니다.</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Sub Page 1 Sidebar -->
-        <div class="detail-sidebar-sub sidebar-content" id="sub1-sidebar">
-            <div class="section-card" data-section="header">
-                <div class="card-header">
-                    <h4 class="card-title">Header</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">포트폴리오 섹션은 업체의 특성에 맞춰 갤러리를 중심으로 구성했습니다. 메인과 동일한 브랜딩을 유지하면서도 갤러리에 최적화된
-                        레이아웃을 적용했습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub01/sub1_01.png" alt="Header">
+                <div class="section-card" data-section="experience">
+                    <div class="card-header">
+                        <h4 class="card-title">User Experience</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">소개 페이지 메뉴를 클릭하여 내용이 변경될때, 화면이 최상단으로 올라가지 않고 머무르던 위치에서 내용만 변경될 수 있도록
+                            제작했습니다.</p>
+                        <!-- <div class="card-preview">
+                            <img src="images/sub/sub2_contact.png" alt="User Experience">
+                        </div> -->
                     </div>
                 </div>
             </div>
 
-            <div class="section-card" data-section="gallery">
-                <div class="card-header">
-                    <h4 class="card-title">Gallery Section</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">작품 이미지를 최적화하여 배치하고, 라이트박스 기능을 통해 사용자가 큰 화면으로 감상할 수 있도록 구현했습니다. 클라이언트가 새
-                        이미지 파일들을 기존의 파일과 동일한 이름을 사용하여 업데이트하면 새로운 사진으로 업데이트 되도록 구현했고, 새로고침시 일정 비율로 랜덤 배치되도록 구성하여 감각적인 느낌을
-                        더하였습니다.</p>
-                    <div class="card-preview">
-                        <img src="images/sub01/sub1_02.png" alt="Gallery">
-                        <img src="images/sub01/sub1_02_01.png" alt="Gallery Detail">
+            <!-- Mobile Sidebar -->
+            <div class="detail-sidebar-mobile sidebar-content" id="mobile-sidebar">
+                <div class="section-card" data-section="mobile-main">
+                    <div class="card-header">
+                        <h4 class="card-title">Main Screen</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">모바일 환경에 최적화된 메인 화면 디자인입니다. 터치 인터페이스와 스와이프 제스처를 고려한 UX를 구현했습니다.</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="section-card" data-section="navigation">
-                <div class="card-header">
-                    <h4 class="card-title">Navigation</h4>
+                <div class="section-card" data-section="mobile-sub1">
+                    <div class="card-header">
+                        <h4 class="card-title">Sub Screen 1</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">햄버거 메뉴를 활용한 모바일 네비게이션을 구현했습니다. 한 손 조작이 가능하도록 접근성을 고려한 UI를 설계했습니다.
+                        </p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">야외와 본식, 스냅과 필름 등 카테고리별로 작품을 분류하여 사용자가 원하는 스타일의 작품을 쉽게 찾을 수 있도록 구성했습니다.
-                    </p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Sub Page 2 Sidebar -->
-        <div class="detail-sidebar-sub sidebar-content" id="sub2-sidebar">
-            <div class="section-card" data-section="introduction">
-                <div class="card-header">
-                    <h4 class="card-title">Introduction Section</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">Brand Story는 업체 소개와 추구하는 방향성에 관한 정보를 담고 있습니다. About/Vision으로 섹션을 나누고, 각
-                        페이지에서는 스토리텔링을 통해 브랜드의 가치와 철학을 담을 수 있도록 구성했습니다.</p>
-                </div>
-            </div>
-
-            <div class="section-card" data-section="experience">
-                <div class="card-header">
-                    <h4 class="card-title">User Experience</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">소개 페이지 메뉴를 클릭하여 내용이 변경될때, 화면이 최상단으로 올라가지 않고 머무르던 위치에서 내용만 변경될 수 있도록
-                        제작했습니다.</p>
-                    <!-- <div class="card-preview">
-                        <img src="images/sub/sub2_contact.png" alt="User Experience">
-                    </div> -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Sidebar -->
-        <div class="detail-sidebar-mobile sidebar-content" id="mobile-sidebar">
-            <div class="section-card" data-section="mobile-main">
-                <div class="card-header">
-                    <h4 class="card-title">Main Screen</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">모바일 환경에 최적화된 메인 화면 디자인입니다. 터치 인터페이스와 스와이프 제스처를 고려한 UX를 구현했습니다.</p>
-                </div>
-            </div>
-
-            <div class="section-card" data-section="mobile-sub1">
-                <div class="card-header">
-                    <h4 class="card-title">Sub Screen 1</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">햄버거 메뉴를 활용한 모바일 네비게이션을 구현했습니다. 한 손 조작이 가능하도록 접근성을 고려한 UI를 설계했습니다.</p>
-                </div>
-            </div>
-
-            <div class="section-card" data-section="mobile-sub2">
-                <div class="card-header">
-                    <h4 class="card-title">Sub Screen 2</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">터치 영역을 충분히 확보하고, 스와이프 갤러리와 터치 친화적인 인터랙션을 구현했습니다. 로딩 속도도 모바일에 최적화했습니다.
-                    </p>
+                <div class="section-card" data-section="mobile-sub2">
+                    <div class="card-header">
+                        <h4 class="card-title">Sub Screen 2</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">터치 영역을 충분히 확보하고, 스와이프 갤러리와 터치 친화적인 인터랙션을 구현했습니다. 로딩 속도도 모바일에
+                            최적화했습니다.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
