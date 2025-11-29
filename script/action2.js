@@ -21,7 +21,7 @@ document.querySelectorAll('.sectionbox .textbox').forEach(textbox => {
 });
 
 // 탭 전환 함수
-function showTab(tabName) {
+function showTab(tabName, event) {  // ← event 매개변수 추가
     // 모든 탭 버튼에서 active 클래스 제거
     document.querySelectorAll('.tab-button').forEach(btn => {
         btn.classList.remove('active');
@@ -38,7 +38,17 @@ function showTab(tabName) {
     });
 
     // 클릭된 탭 버튼에 active 클래스 추가
-    event.target.classList.add('active');
+    if (event) {  // ← if (event) 추가
+        const clickedButton = event.target.closest('.tab-button');
+        if (clickedButton) {
+            clickedButton.classList.add('active');
+        }
+    } else {  // ← else 블록 추가
+        const activeButton = document.querySelector(`[data-tab="${tabName}"]`);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    }
 
     // 해당 탭 컨텐츠 보이기
     document.getElementById(tabName + '-tab').classList.add('active');
@@ -128,6 +138,13 @@ $(document).ready(function () {
     // Footer 로드
     $('footer').load('include/footer.html', function () {
         initFooterEvents();
+    });
+
+    // 탭 버튼 이벤트 등록
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', function (e) {
+            showTab(this.dataset.tab, e);  // event 전달
+        });
     });
 });
 

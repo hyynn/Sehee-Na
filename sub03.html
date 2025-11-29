@@ -44,11 +44,20 @@
 
     <div class="detail-container centerbox">
         <div class="tab-buttons">
-            <button class="tab-button active" onclick="showTab('process')">Process</button>
-            <button class="tab-button" onclick="showTab('main')">Main</button>
-            <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
-            <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
-            <button class="tab-button" onclick="showTab('sub3')">Sub page 3</button>
+            <button class="tab-button active" data-tab="process">Process</button>
+            <button class="tab-button" data-tab="main">Main</button>
+            <button class="tab-button" data-tab="sub1">
+                <span class="full-text">Sub page 1</span>
+                <span class="short-text">Sub1</span>
+            </button>
+            <button class="tab-button" data-tab="sub2">
+                <span class="full-text">Sub page 2</span>
+                <span class="short-text">Sub2</span>
+            </button>
+            <button class="tab-button" data-tab="sub3">
+                <span class="full-text">Sub page 3</span>
+                <span class="short-text">Sub3</span>
+            </button>
         </div>
 
         <div class="content-wrapper">
@@ -196,9 +205,9 @@
                                     </div>
                                 </div>
                                 <div class="color-item">
-                                    <span class="color-preview" style="background: #1a1a1a;"></span>
+                                    <span class="color-preview" style="background: #1A1A1A;"></span>
                                     <div class="color-info">
-                                        <strong>#1a1a1a</strong>
+                                        <strong>#1A1A1A</strong>
                                         <p>Dark Gray - 본문 텍스트</p>
                                     </div>
                                 </div>

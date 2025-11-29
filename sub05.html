@@ -37,12 +37,12 @@
     </div>
 
     <div class="detail-container centerbox">
-        <div class="detail-main">
-            <div class="tab-container">
-                <div class="tab-buttons">
-                    <button class="tab-button active" onclick="showTab('main')">Main</button>
-                </div>
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="main">Main</button>
+        </div>
 
+        <div class="content-wrapper">
+            <div class="detail-main">
                 <!-- Main Tab -->
                 <div id="main-tab" class="tab-content active">
                     <div class="mobile-preview-container">
@@ -57,69 +57,74 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Main Sidebar -->
-        <div class="detail-sidebar-main sidebar-content active" id="main-sidebar">
-            <div class="section-card" data-section="mobile-main">
-                <div class="card-header">
-                    <h4 class="card-title">Project Overview</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">2인 1조로 진행한 팀 프로젝트로, 사용자가 좋아하는 배우나 작품을 저장하면 알고리즘에 반영되어 맞춤형 영화를 추천해주는 앱
-                        서비스입니다. 조원과 대화를 나누며 디자인하는 과정을 통해 클라이언트와의 커뮤니케이션을 간접적으로 경험할 수 있었습니다.</p>
-                </div>
             </div>
 
-            <div class="section-card" data-section="mobile-main">
-                <div class="card-header">
-                    <h4 class="card-title">Main Screen</h4>
+            <!-- Main Sidebar -->
+            <div class="detail-sidebar-main sidebar-content active" id="main-sidebar">
+                <div class="section-card" data-section="mobile-main">
+                    <div class="card-header">
+                        <h4 class="card-title">Project Overview</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">2인 1조로 진행한 팀 프로젝트로, 사용자가 좋아하는 배우나 작품을 저장하면 알고리즘에 반영되어 맞춤형 영화를 추천해주는
+                            앱
+                            서비스입니다. 조원과 대화를 나누며 디자인하는 과정을 통해 클라이언트와의 커뮤니케이션을 간접적으로 경험할 수 있었습니다.</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">홈 화면에서는 인기 영화와 개인화된 추천 영화를 한눈에 볼 수 있도록 설계했습니다. 카드 형식의 레이아웃으로 영화 포스터를
-                        직관적으로 탐색할 수 있으며, 스크롤을 통해 다양한 카테고리의 영화를 자연스럽게 확인할 수 있습니다.</p>
-                </div>
-            </div>
 
-            <div class="section-card" data-section="mobile-sub1">
-                <div class="card-header">
-                    <h4 class="card-title">Search & Filter</h4>
+                <div class="section-card" data-section="mobile-main">
+                    <div class="card-header">
+                        <h4 class="card-title">Main Screen</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">홈 화면에서는 인기 영화와 개인화된 추천 영화를 한눈에 볼 수 있도록 설계했습니다. 카드 형식의 레이아웃으로 영화 포스터를
+                            직관적으로 탐색할 수 있으며, 스크롤을 통해 다양한 카테고리의 영화를 자연스럽게 확인할 수 있습니다.</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">검색 기능을 통해 원하는 영화를 빠르게 찾을 수 있으며, 장르별, 평점별, 개봉년도별 필터링 기능을 제공합니다. 사용자의 검색
-                        패턴을 학습하여 맞춤형 검색 결과를 우선적으로 노출합니다.</p>
-                </div>
-            </div>
 
-            <div class="section-card" data-section="mobile-sub1">
-                <div class="card-header">
-                    <h4 class="card-title">Detail Page</h4>
+                <div class="section-card" data-section="mobile-sub1">
+                    <div class="card-header">
+                        <h4 class="card-title">Search & Filter</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">검색 기능을 통해 원하는 영화를 빠르게 찾을 수 있으며, 장르별, 평점별, 개봉년도별 필터링 기능을 제공합니다. 사용자의
+                            검색
+                            패턴을 학습하여 맞춤형 검색 결과를 우선적으로 노출합니다.</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">영화 상세 페이지에서는 줄거리, 출연진, 평점, 리뷰 등 영화에 대한 모든 정보를 제공합니다. 저장 버튼을 통해 관심 목록에
-                        추가할 수 있으며, 이 데이터는 추천 알고리즘에 반영됩니다.</p>
-                </div>
-            </div>
 
-            <div class="section-card" data-section="mobile-sub2">
-                <div class="card-header">
-                    <h4 class="card-title">Favorite List</h4>
+                <div class="section-card" data-section="mobile-sub1">
+                    <div class="card-header">
+                        <h4 class="card-title">Detail Page</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">영화 상세 페이지에서는 줄거리, 출연진, 평점, 리뷰 등 영화에 대한 모든 정보를 제공합니다. 저장 버튼을 통해 관심
+                            목록에
+                            추가할 수 있으며, 이 데이터는 추천 알고리즘에 반영됩니다.</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">좋아하는 목록에서는 저장한 영화 목록과 시청 기록을 확인할 수 있습니다. 선호하는 장르와 배우를 기반으로 개인화된 추천을
-                        제공하며, 취향을 시각적으로 분석한 통계도 확인 가능합니다.</p>
-                </div>
-            </div>
 
-            <div class="section-card" data-section="mobile-sub2">
-                <div class="card-header">
-                    <h4 class="card-title">Design System</h4>
+                <div class="section-card" data-section="mobile-sub2">
+                    <div class="card-header">
+                        <h4 class="card-title">Favorite List</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">좋아하는 목록에서는 저장한 영화 목록과 시청 기록을 확인할 수 있습니다. 선호하는 장르와 배우를 기반으로 개인화된 추천을
+                            제공하며, 취향을 시각적으로 분석한 통계도 확인 가능합니다.</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-description">다크 톤의 배경과 생동감 있는 포인트 컬러를 사용하여 영화 콘텐츠가 돋보이도록 디자인했습니다. Pretendard 폰트를 사용해
-                        가독성을 높였으며, 일관된 컴포넌트 시스템으로 확장 가능한 디자인을 구축했습니다.</p>
 
+                <div class="section-card" data-section="mobile-sub2">
+                    <div class="card-header">
+                        <h4 class="card-title">Design System</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">다크 톤의 배경과 생동감 있는 포인트 컬러를 사용하여 영화 콘텐츠가 돋보이도록 디자인했습니다. Pretendard 폰트를
+                            사용해
+                            가독성을 높였으며, 일관된 컴포넌트 시스템으로 확장 가능한 디자인을 구축했습니다.</p>
+
+                    </div>
                 </div>
             </div>
         </div>

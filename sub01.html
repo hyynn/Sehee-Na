@@ -43,11 +43,17 @@
 
     <div class="detail-container centerbox">
         <div class="tab-buttons">
-            <button class="tab-button active" onclick="showTab('process')">Process</button>
-            <button class="tab-button" onclick="showTab('main')">Main</button>
-            <button class="tab-button" onclick="showTab('sub1')">Sub page 1</button>
-            <button class="tab-button" onclick="showTab('sub2')">Sub page 2</button>
-            <button class="tab-button" onclick="showTab('mobile')">Mobile</button>
+            <button class="tab-button active" data-tab="process">Process</button>
+            <button class="tab-button" data-tab="main">Main</button>
+            <button class="tab-button" data-tab="sub1">
+                <span class="full-text">Sub page 1</span>
+                <span class="short-text">Sub1</span>
+            </button>
+            <button class="tab-button" data-tab="sub2">
+                <span class="full-text">Sub page 2</span>
+                <span class="short-text">Sub2</span>
+            </button>
+            <button class="tab-button" data-tab="mobile">Mobile</button>
         </div>
         <div class="content-wrapper">
             <div class="detail-main">
