@@ -260,7 +260,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 #process-sidebar { padding-top: 130px; } 
 
 /* Footer Styles */
-#main footer { position: relative; z-index: 5; width: 100vw; height: 100vh; background: #000; overflow: hidden;} 
+#main footer { position: relative; z-index: 5; width: 100vw; height: 100vh; background: #000; overflow: hidden; } 
 #main footer #object3 { width: 100%; position: absolute; opacity: 0.2; display: block; } 
 .sub footer { width: 100%; height: auto; padding: 80px 0; background: #000; } 
 /* 서브 footer 기본값 */
@@ -461,7 +461,6 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .tab-button { padding: 12px 20px; } 
  .step-content, .section-card { padding: 14px; } 
  .step-content ul li { padding: 4px 0 4px 10px; } 
-
  .mobile-preview-container { gap: 10px; } 
  }
 
@@ -479,7 +478,6 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
 .resolution-notice { padding: 15px 20px; border-radius: 10px; white-space: normal; width: 290px; } 
  footer { display: flex; justify-content: center; align-items: center; } 
  footer .centerbox { width: 300px; height: 260px; display: flex; flex-direction: column; } 
- footer iframe { overflow: hidden; } 
  footer .contact-text { text-align: left; } 
  footer .info .textbox { margin-top: 10px; } 
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; padding: 0; } 
@@ -493,4 +491,5 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  footer .centerbox { display: flex; flex-direction: column; align-items: flex-start; } 
  #main footer iframe { transform: scale(1.26); bottom: 0; } 
  footer .typing-text { white-space: normal; } 
+ footer .typing-text .word { display: inline-block; white-space: nowrap; margin-right: 0.25em; } 
  }

@@ -822,7 +822,7 @@
 
             // Create new split
             if (typingSplit) typingSplit.revert();
-            typingSplit = new SplitText('.typing-text', { type: 'chars' });
+            typingSplit = new SplitText('.typing-text', { type: 'words,chars' });
 
             gsap.set('.typing-text', { opacity: 1 });
 
