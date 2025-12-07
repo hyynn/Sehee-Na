@@ -175,10 +175,18 @@ $(window).scroll(function () {
         }
     }
 
-    // Footer iframe 처리 - 메인 페이지에서만
+    // Footer iframe 처리
     if (document.body.id === 'main') {
         if (scrollTop + windowHeight >= documentHeight - 10) {
             $('footer iframe').addClass('active');
+
+            // 479px 이하: bubble 텍스트를 바로 "Contact me!"로
+            if (window.innerWidth <= 479) {
+                const $bubble = $('.contact-bubble');
+                if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
+                    $bubble.text('Contact me!');
+                }
+            }
         } else {
             $('footer iframe').removeClass('active');
             $('.contact-bubble').removeClass('show');

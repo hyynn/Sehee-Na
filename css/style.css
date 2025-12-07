@@ -473,6 +473,8 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  #main footer iframe { transform: scale(1.16); } 
  }
 
+ 
+
 
 @media (max-width: 479px){
  .centerbox, .poster-container { width: 330px; } 
