@@ -179,6 +179,7 @@ $(window).scroll(function () {
     if (document.body.id === 'main') {
         if (scrollTop + windowHeight >= documentHeight - 10) {
             $('footer iframe').addClass('active');
+            $('.contact-bubble').addClass('show');
         } else {
             $('footer iframe').removeClass('active');
             $('.contact-bubble').removeClass('show');
@@ -192,10 +193,10 @@ function initFooterEvents() {
     if (document.body.id !== 'main') return;
 
     let iframeActive = false;
-    let iframeInteracted = false;
     const $iframe = $('footer iframe');
     const $bubble = $('.contact-bubble');
 
+    // PC용: 마우스 포커스 감지
     $iframe.on('mouseenter', function () {
         iframeActive = true;
     }).on('mouseleave', function () {
@@ -206,21 +207,21 @@ function initFooterEvents() {
         iframeActive = false;
     });
 
-    // 모바일/개발자도구용: pointermove 감지
-    $iframe.on('pointerdown', function () {
-        iframeInteracted = true;
-        setTimeout(function () {
-            if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
-                $bubble.text('Contact me!');
-            }
-        }, 300);
+    // 💡 모바일/PC 상호작용 감지: click 이벤트 추가 (이전 논의 반영)
+    // iframe이 이벤트를 가로채는 문제가 있다면 이 로직이 작동하지 않을 수 있습니다.
+    $iframe.on('click', function (e) {
+        if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
+            $bubble.text('Contact me!');
+        }
     });
+
+    // 💡 이전 pointerdown 로직은 제거되었습니다.
 }
 
-// Window Blur Event (PC용)
+// Window Blur Event (PC용/iframe focus 감지)
 $(window).on('blur', function () {
     if (document.body.id !== 'main') return;
-
+    // 메인 페이지에서만 실행
     if (document.activeElement.tagName === 'IFRAME') {
         const $bubble = $('.contact-bubble');
         if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
@@ -229,18 +230,6 @@ $(window).on('blur', function () {
     }
 });
 
-// Window Blur Event (iframe focus 감지)
-$(window).on('blur', function () {
-    // 메인 페이지에서만 실행
-    if (document.body.id !== 'main') return;
-
-    if (document.activeElement.tagName === 'IFRAME') {
-        const $bubble = $('.contact-bubble');
-        if ($bubble.hasClass('show') && $bubble.text() === 'Drag me!') {
-            $bubble.text('Contact me!');
-        }
-    }
-});
 
 // URL 해시로 특정 섹션으로 이동 (GSAP ScrollSmoother 대응)
 $(document).ready(function () {
@@ -262,3 +251,6 @@ $(document).ready(function () {
 
     // ... 기존 코드
 });
+
+
+
