@@ -193,21 +193,31 @@ function initFooterEvents() {
     if (document.body.id !== 'main') return;
 
     let iframeActive = false;
+    const $iframe = $('footer iframe');
+    const $bubble = $('.contact-bubble');
 
-    $('footer iframe').on('mouseenter', function () {
+    $iframe.on('mouseenter touchstart', function () {
         iframeActive = true;
-    }).on('mouseleave', function () {
+    }).on('mouseleave touchend', function () {
         if (iframeActive && document.activeElement.tagName === 'IFRAME') {
             document.activeElement.blur();
             $('body').focus();
         }
         iframeActive = false;
     });
+
+    // 모바일용 추가: iframe 클릭/터치 감지
+    $iframe.on('click touchstart', function () {
+        setTimeout(function () {
+            if ($bubble.hasClass('show') && $bubble.text() === 'Drag me!') {
+                $bubble.text('Contact me!');
+            }
+        }, 100);
+    });
 }
 
-// Window Blur Event (iframe focus 감지)
+// Window Blur Event (PC용 백업)
 $(window).on('blur', function () {
-    // 메인 페이지에서만 실행
     if (document.body.id !== 'main') return;
 
     if (document.activeElement.tagName === 'IFRAME') {
