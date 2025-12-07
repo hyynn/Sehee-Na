@@ -192,6 +192,7 @@ function initFooterEvents() {
     if (document.body.id !== 'main') return;
 
     let iframeActive = false;
+    let iframeInteracted = false;
     const $iframe = $('footer iframe');
     const $bubble = $('.contact-bubble');
 
@@ -205,44 +206,18 @@ function initFooterEvents() {
         iframeActive = false;
     });
 
-    // iframe active 상태 감시
-    const observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            if (mutation.attributeName === 'class') {
-                if ($iframe.hasClass('active')) {
-                    // active가 되면 주기적으로 체크
-                    startBubbleCheck();
-                } else {
-                    stopBubbleCheck();
-                }
-            }
-        });
-    });
-
-    observer.observe($iframe[0], { attributes: true });
-
-    let bubbleCheckInterval;
-
-    function startBubbleCheck() {
-        bubbleCheckInterval = setInterval(function () {
+    // 모바일/개발자도구용: pointermove 감지
+    $iframe.on('pointerdown', function () {
+        iframeInteracted = true;
+        setTimeout(function () {
             if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
-                // iframe 내부에서 마우스/터치 이벤트가 발생했는지 체크
-                if (document.activeElement === $iframe[0]) {
-                    $bubble.text('Contact me!');
-                    stopBubbleCheck();
-                }
+                $bubble.text('Contact me!');
             }
-        }, 100);
-    }
-
-    function stopBubbleCheck() {
-        if (bubbleCheckInterval) {
-            clearInterval(bubbleCheckInterval);
-        }
-    }
+        }, 300);
+    });
 }
 
-// Window Blur Event (PC용 백업)
+// Window Blur Event (PC용)
 $(window).on('blur', function () {
     if (document.body.id !== 'main') return;
 
