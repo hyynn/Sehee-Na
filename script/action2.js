@@ -179,7 +179,6 @@ $(window).scroll(function () {
     if (document.body.id === 'main') {
         if (scrollTop + windowHeight >= documentHeight - 10) {
             $('footer iframe').addClass('active');
-            $('.contact-bubble').addClass('show');
         } else {
             $('footer iframe').removeClass('active');
             $('.contact-bubble').removeClass('show');
@@ -193,10 +192,10 @@ function initFooterEvents() {
     if (document.body.id !== 'main') return;
 
     let iframeActive = false;
+    let iframeInteracted = false;
     const $iframe = $('footer iframe');
     const $bubble = $('.contact-bubble');
 
-    // PC용: 마우스 포커스 감지
     $iframe.on('mouseenter', function () {
         iframeActive = true;
     }).on('mouseleave', function () {
@@ -207,15 +206,15 @@ function initFooterEvents() {
         iframeActive = false;
     });
 
-    // 💡 모바일/PC 상호작용 감지: click 이벤트 추가 (이전 논의 반영)
-    // iframe이 이벤트를 가로채는 문제가 있다면 이 로직이 작동하지 않을 수 있습니다.
-    $iframe.on('click', function (e) {
-        if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
-            $bubble.text('Contact me!');
-        }
+    // 모바일/개발자도구용: pointermove 감지
+    $iframe.on('pointerdown', function () {
+        iframeInteracted = true;
+        setTimeout(function () {
+            if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
+                $bubble.text('Contact me!');
+            }
+        }, 100);
     });
-
-    // 💡 이전 pointerdown 로직은 제거되었습니다.
 }
 
 // Window Blur Event (PC용/iframe focus 감지)
