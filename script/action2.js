@@ -189,16 +189,15 @@ $(window).scroll(function () {
 
 // Footer Events
 function initFooterEvents() {
-    // 메인 페이지에서만 실행
     if (document.body.id !== 'main') return;
 
     let iframeActive = false;
     const $iframe = $('footer iframe');
     const $bubble = $('.contact-bubble');
 
-    $iframe.on('mouseenter touchstart', function () {
+    $iframe.on('mouseenter', function () {
         iframeActive = true;
-    }).on('mouseleave touchend', function () {
+    }).on('mouseleave', function () {
         if (iframeActive && document.activeElement.tagName === 'IFRAME') {
             document.activeElement.blur();
             $('body').focus();
@@ -206,18 +205,58 @@ function initFooterEvents() {
         iframeActive = false;
     });
 
-    // 모바일용 추가: iframe 클릭/터치 감지
-    $iframe.on('click touchstart', function () {
-        setTimeout(function () {
-            if ($bubble.hasClass('show') && $bubble.text() === 'Drag me!') {
-                $bubble.text('Contact me!');
+    // iframe active 상태 감시
+    const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.attributeName === 'class') {
+                if ($iframe.hasClass('active')) {
+                    // active가 되면 주기적으로 체크
+                    startBubbleCheck();
+                } else {
+                    stopBubbleCheck();
+                }
+            }
+        });
+    });
+
+    observer.observe($iframe[0], { attributes: true });
+
+    let bubbleCheckInterval;
+
+    function startBubbleCheck() {
+        bubbleCheckInterval = setInterval(function () {
+            if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
+                // iframe 내부에서 마우스/터치 이벤트가 발생했는지 체크
+                if (document.activeElement === $iframe[0]) {
+                    $bubble.text('Contact me!');
+                    stopBubbleCheck();
+                }
             }
         }, 100);
-    });
+    }
+
+    function stopBubbleCheck() {
+        if (bubbleCheckInterval) {
+            clearInterval(bubbleCheckInterval);
+        }
+    }
 }
 
 // Window Blur Event (PC용 백업)
 $(window).on('blur', function () {
+    if (document.body.id !== 'main') return;
+
+    if (document.activeElement.tagName === 'IFRAME') {
+        const $bubble = $('.contact-bubble');
+        if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
+            $bubble.text('Contact me!');
+        }
+    }
+});
+
+// Window Blur Event (iframe focus 감지)
+$(window).on('blur', function () {
+    // 메인 페이지에서만 실행
     if (document.body.id !== 'main') return;
 
     if (document.activeElement.tagName === 'IFRAME') {
