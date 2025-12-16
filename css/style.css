@@ -431,7 +431,7 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .centerbox, .poster-container { width: 550px; } 
  .poster-container { padding-top: 50px; } 
  .info-container .info-item { width: 260px; } 
- .info-container .info-item h2 { margin: 10px; } 
+ .info-container .info-item h2 { margin: 10px 0; } 
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; } 
  .banner .view { width: 600px; height: 150px; } 
  .banner .content ul li img { width: 600px; } 
@@ -490,4 +490,6 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  #main footer iframe { transform: scale(1.26); bottom: 0; } 
  footer .typing-text { white-space: normal; } 
  footer .typing-text .word { display: inline-block; white-space: nowrap; margin-right: 0.25em; } 
+.sub-btn { gap: 10px;flex-direction: column; text-align: center; } 
+.back-button {margin-bottom: 0px;}
  }
