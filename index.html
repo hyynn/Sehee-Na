@@ -24,9 +24,6 @@
     <div id="smooth-wrapper">
         <div id="smooth-content">
             <div class="poster-container part centerbox">
-                <div class="resolution-notice">
-                    이 포트폴리오는 1920×1080 해상도에 최적화되어 있습니다.
-                </div>
                 <nav class="imgMain">
                     <img src="images/object1.png" alt="object1" id="object1">
                     <img src="images/object2.png" alt="object2" id="object2">
@@ -88,8 +85,7 @@
                             <div class="info-content">
                                 <div class="info-item">
                                     <h2>ABOUT</h2>
-                                    <P>나세희</P>
-                                    <P>1994. 02. 04</P>
+                                    <P>나세희<br>1994. 02. 04</P>
                                 </div>
 
                                 <div class="info-item">
@@ -550,11 +546,11 @@
             descBox.innerHTML = descBoxOriginalHTML;
             descBox.style.display = '';
 
-            if (windowWidth <= 767) {
-                // 767px 이하: 전체 숨김
+            if (windowWidth <= 600) {
+                // 600px 이하: 전체 숨김
                 descBox.style.display = 'none';
             } else {
-                // 768px 이상: 요소 제거 후 SplitText
+                // 600px 이상: 요소 제거 후 SplitText
                 const secondP = descBox.querySelectorAll('p')[1];
                 const firstPSpan = descBox.querySelector('p span');
 

@@ -122,10 +122,6 @@ function initMobileNavigation() {
 
 // Document Ready
 $(document).ready(function () {
-    // Resolution Notice - 4초 후 페이드아웃
-    setTimeout(function () {
-        $('.resolution-notice').addClass('fade-out');
-    }, 4000);
 
     // 모바일 프리뷰 아이템 호버 시 active 클래스 토글
     $('.mobile-preview-item').hover(
