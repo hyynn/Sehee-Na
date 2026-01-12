@@ -40,7 +40,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 /* 섹션 공통 */
 .sectionbox .centerbox { display: flex; justify-content: space-between; align-items: center; } 
 .sectionbox .textbox { width: 34.33%; } 
-.sectionbox .textbox h2 { font-size: clamp(24px, 2.60vw, 50px); font-weight: normal; line-height: 1; margin-bottom: 10px; } 
+.sectionbox .textbox h2 { font-size: clamp(32px, 3.04vw, 60px); font-weight: normal; line-height: 1; margin-bottom: 10px;  } 
 .sectionbox .textbox h2 span { font-size: clamp(36px, 4.17vw, 80px); margin-right: 5px; } 
 .sectionbox .textbox .concept h3 { font-weight: 500; font-size: clamp(18px, 1.56vw, 30px); color: #505050; } 
 .sectionbox .textbox .concept article { font-size: clamp(16px, 0.94vw, 18px); text-align: justify; margin-top: 5px; } 
