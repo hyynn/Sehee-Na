@@ -189,7 +189,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 .workflow-step:hover .step-number { background: #505050; transform: scale(1.05); } 
 .step-content { background: #fafafa; padding: 30px; border-radius: 12px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01); transition: all 0.3s ease; } 
 .workflow-step:hover .step-content { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); } 
-.step-content h4 { font-size: clamp(18px, 1.25vw, 24px); font-weight: 600; margin-bottom: 15px; color: #333; } 
+.step-content h4 { font-size: clamp(16px, 1.25vw, 24px); font-weight: 600; margin-bottom: 15px; color: #333; } 
 .step-content ul { list-style: none; padding: 0; } 
 .step-content ul li { font-size: clamp(16px, 0.94vw, 18px); color: #505050; padding: 8px 0 8px 20px; position: relative; } 
 .step-content ul li::before { content: '•'; position: absolute; left: 0; color: #A5B2A2; font-weight: bold; } 
@@ -208,9 +208,9 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 .section-card:last-child { margin-bottom: 0; } 
 
 .card-header { margin-bottom: 15px; } 
-.card-title { font-size: clamp(18px, 1.04vw, 20px); font-weight: 600; color: #333; margin: 0; } 
+.card-title { font-size: clamp(16px, 1.04vw, 20px); font-weight: 600; color: #333; margin: 0; } 
 .card-body { display: flex; flex-direction: column; gap: 15px; } 
-.card-description { font-size: 16px; color: #505050; line-height: 1.6; text-align: justify; margin: 0; } 
+.card-description { font-size: clamp(14px,0.833vw,16px); color: #505050; line-height: 1.6; text-align: justify; margin: 0; } 
 .card-preview { display: flex; align-items: start; gap: 10px; margin-top: 10px; } 
 .card-preview img { width: 48%; object-fit: contain; border-radius: 8px; transition: all 0.3s ease; } 
 .card-preview img:only-child { width: 100%; } 
@@ -224,22 +224,22 @@ nav img#object2 { position: absolute; left: 0; top: 0; }
 
 /* Process Sidebar Styles */
 .detail-sidebar-process .style-guide-section { margin-top: 20px; margin-bottom: 10px; } 
-.detail-sidebar-process h5 { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 20px; } 
+.detail-sidebar-process h5 { font-size:clamp(16px, 0.94vw, 18px); font-weight: 600; color: #333; margin-bottom: 20px; } 
 .color-palette-detail { display: flex; flex-direction: column; gap: 15px; } 
 .color-item { display: flex; align-items: center; gap: 15px; } 
 .color-preview { width: 50px; height: 50px; border-radius: 8px; flex-shrink: 0; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); } 
 .color-info { flex: 1; } 
-.color-info strong { display: block; font-size: 16px; color: #333; margin-bottom: 2px; } 
-.color-info p { font-size: 16px; color: #505050; margin: 0; } 
+.color-info strong { display: block; font-size: clamp(14px,0.833vw,16px); color: #333; margin-bottom: 2px; } 
+.color-info p { font-size: clamp(14px,0.833vw,16px); color: #505050; margin: 0; } 
 .typography-detail { display: flex; flex-direction: column; gap: 15px; } 
 .font-item { padding: 0px 10px; background: #f9f9f9; border-radius: 8px; } 
-.font-item strong { display: block; font-size: 16px; color: #333; margin-bottom: 5px; } 
-.font-item p { font-size: 16px; color: #505050; margin: 0; } 
+.font-item strong { display: block; font-size: clamp(14px,0.833vw,16px); color: #333; margin-bottom: 5px; } 
+.font-item p { font-size: clamp(14px,0.833vw,16px); color: #505050; margin: 0; } 
 .section-card:last-child .card-description { margin-bottom: 20px; } 
 .decision-item { margin-bottom: 20px; padding-bottom: 30px; border-bottom: 1px solid #eee; } 
 .decision-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; } 
 .decision-item h5 { font-size: clamp(16px, 0.94vw, 18px); font-weight: 600; color: #333; margin-bottom: 10px; } 
-.decision-item p { font-size: 16px; color: #505050; line-height: 1.6; text-align: justify; margin: 0; } 
+.decision-item p { font-size: clamp(14px,0.833vw,16px); color: #505050; line-height: 1.6; text-align: justify; margin: 0; } 
 
 /* Page Preview Container (Main/Sub1/Sub2 탭용) */
 .page-preview-container { width: 100%; overflow-y: auto; scroll-behavior: smooth; padding: 50px 0; } 
@@ -430,7 +430,7 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  #process-sidebar { padding-top: 48px; } 
  .detail-container { padding-right: 0; } 
  .workflow-title { margin-bottom: 20px; } 
- .tab-button { padding: 12px 36px; } 
+ .tab-button { padding: 12px 35px; } 
  }
 
 @media (max-width: 767px){
@@ -457,13 +457,12 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .info-container .info-item:nth-child(2) { margin-top: 30px; }
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; } 
  .bottom-section, .sub-info-section { display: none; } 
-
  .banner .view { width: 450px; height: 112.5px; } 
  .banner .content ul li img { width: 450px; } 
  footer .centerbox { margin: 50px; } 
  footer .textbox { width: 180px; } 
  footer .contact-bubble { right: -340px; bottom: -200px; } 
- .tab-button { padding: 12px 20px; } 
+ .tab-button { padding: 12px 24px;} 
  .step-content, .section-card { padding: 14px; border-radius: 8px;} 
  .card-preview img {border-radius: 6px;}
  .step-content ul li { padding: 4px 0 4px 10px; } 
@@ -475,12 +474,13 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  footer iframe { left: 0; bottom: -60px; } 
  footer .centerbox { width: 360px; } 
  footer .contact-bubble { right: -350px; bottom: -210px; } 
+ .tab-button { padding: 12px 16px;} 
  #main footer iframe { transform: scale(1.16); } 
  }
 
 
 @media (max-width: 479px){
- .centerbox, .poster-container { width: 330px; } 
+ .centerbox, .poster-container { width: 350px; } 
  footer { display: flex; justify-content: center; align-items: center; } 
  footer .centerbox { width: 300px; height: 260px; display: flex; flex-direction: column; } 
  footer .contact-text { text-align: left; } 
@@ -492,7 +492,7 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .banner .content ul li img { width: 350px; } 
  footer .textbox { width: 100%; } 
  footer .contact-bubble { right: -340px; bottom: -180px; } 
- .tab-button { padding: 12px 12px; } 
+ .tab-button { padding: 12px 10px; } 
  footer .centerbox { display: flex; flex-direction: column; align-items: flex-start; } 
  #main footer iframe { transform: scale(1.26); bottom: 0; } 
  footer .typing-text { white-space: normal; } 
