@@ -451,7 +451,8 @@
 
             <div class="banner part">
                 <div class="centerbox">
-                    <h2>Banner</h2>
+                    <h2 class="banner-title-mobile">Banner</h2>
+                    <h2 class="banner-title-gsap">Banner</h2>
 
                     <div class="content">
                         <ul>
@@ -659,7 +660,7 @@ gsap.timeline({
             start: "top top",
             end: "70% top",
             scrub: true,
-            pin: ".banner h2",      // h2를 스크롤 동안 고정
+            pin: ".banner-title-gsap",      // h2를 스크롤 동안 고정
             // anticipatePin: 1,
             // markers: true
         });
