@@ -584,57 +584,97 @@ gsap.from(split2.chars, {
         });
 
 
-// 포스터 핀 + 오브젝트 애니메이션
-mm.add("(pointer: fine)", () => {
-    const posterTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".poster-container",
-            start: "top top",
-            end: "+=1200",
-            scrub: 1,
-            pin: true,
-        }
-    });
-
-    posterTl
-        .to("#object1", { xPercent: -20, yPercent: 15, rotate: -25, duration: 3 }, 0)
-        .to("#object2", { xPercent: 20, yPercent: -10, rotate: 25, duration: 3 }, 0)
-        .to("#object1", { xPercent: 10, yPercent: -20, rotate: 15, duration: 3 }, 3)
-        .to("#object2", { xPercent: -15, yPercent: 20, rotate: -15, duration: 3 }, 3)
-        .to(["#object1", "#object2"], { autoAlpha: 0, scale: 0.6, duration: 2 }, 5);
-});
-
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".info-container",
-        start: "top 80%",
-        end: "top 20%",
-        scrub: true
-    }
-})
-.from(".info-container .photo img", { opacity: 0, scale: 50 }, 'infoAnim')
-.from(".info-container .info-contents", { x: -100, opacity: 0, duration: 1, ease: 'power2.out' }, 'infoAnim');
-
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".section5",
-        start: "top 70%",
-        end: "bottom bottom",
-        scrub: true,
-    }
-}).from(".vis1", { x: 400 }, 'moScreen')
-  .from(".vis2", { x: 200 }, 'moScreen');
 
 
+// 배너 타임라인 선언
+        const banner = gsap.timeline();
+        banner.from(".banner-title-gsap", {
+            top: 100,
+            position: 'absolute'
+        });
 
-        //팝업
+        // matchMedia
+        const mm = gsap.matchMedia();
+
+        mm.add("(pointer: fine)", () => {
+            // 포스터 오브젝트
+            const posterTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".poster-container",
+                    start: "top top",
+                    end: "+=1200",
+                    scrub: 1,
+                    pin: true,
+                }
+            });
+
+            posterTl
+                .to("#object1", { xPercent: -20, yPercent: 15, rotate: -25, duration: 3 }, 0)
+                .to("#object2", { xPercent: 20, yPercent: -10, rotate: 25, duration: 3 }, 0)
+                .to("#object1", { xPercent: 10, yPercent: -20, rotate: 15, duration: 3 }, 3)
+                .to("#object2", { xPercent: -15, yPercent: 20, rotate: -15, duration: 3 }, 3)
+                .to(["#object1", "#object2"], { autoAlpha: 0, scale: 0.6, duration: 2 }, 5);
+
+            // 배너 핀
+            ScrollTrigger.create({
+                animation: banner,
+                trigger: ".banner",
+                start: "top top",
+                end: "70% top",
+                scrub: true,
+                pin: ".banner-title-gsap",
+            });
+            ScrollTrigger.create({
+                animation: banner,
+                trigger: ".banner",
+                start: "top top",
+                end: "150% bottom",
+                scrub: true,
+                pin: ".view",
+            });
+        });
+
+        mm.add("(pointer: coarse)", () => {
+            ScrollTrigger.create({
+                animation: banner,
+                trigger: ".banner",
+                start: "top top",
+                end: "70% top",
+                scrub: true,
+            });
+        });
+
+        // introduction
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".info-container",
+                start: "top 80%",
+                end: "top 20%",
+                scrub: true
+            }
+        })
+        .from(".info-container .photo img", { opacity: 0, scale: 50 }, 'infoAnim')
+        .from(".info-container .info-contents", { x: -100, opacity: 0, duration: 1, ease: 'power2.out' }, 'infoAnim');
+
+        // section5
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".section5",
+                start: "top 70%",
+                end: "bottom bottom",
+                scrub: true,
+            }
+        }).from(".vis1", { x: 400 }, 'moScreen')
+          .from(".vis2", { x: 200 }, 'moScreen');
+
+        // 팝업
         const popup = gsap.timeline();
         popup.from(".popup li", {
             y: 100,
             opacity: 0,
             stagger: 0.2,
             duration: 1,
-        })
+        });
 
         ScrollTrigger.create({
             animation: popup,
@@ -645,83 +685,31 @@ gsap.timeline({
             pin: true,
             anticipatePin: 1,
             toggleActions: "play none none reset",
-            // markers: true
         });
 
-        //배너
-        const banner = gsap.timeline();
-        banner.from(".banner h2", {
-            top: 100,
-            position: 'absolute'
-        })
-
-        ScrollTrigger.create({
-            animation: banner,
-            trigger: ".banner",
-            start: "top top",
-            end: "70% top",
-            scrub: true,
-            pin: ".banner-title-gsap",      // h2를 스크롤 동안 고정
-            // anticipatePin: 1,
-            // markers: true
-        });
-        ScrollTrigger.create({
-            animation: banner,
-            trigger: ".banner",
-            start: "top top",
-            end: "150% bottom",
-            scrub: true,
-            pin: ".view",      // h2를 스크롤 동안 고정
-            // anticipatePin: 1,
-            // markers: true
-        });
+        // 배너 이미지 컬러 전환
         gsap.utils.toArray(".banner .content ul li img").forEach(function (img) {
             ScrollTrigger.create({
                 trigger: img,
-                start: "top bottom",   // 이미지가 화면에 들어오기 시작할 때
-                end: "bottom top",     // 이미지가 화면에서 사라질 때까지
+                start: "top bottom",
+                end: "bottom top",
                 onUpdate: (self) => {
-                    // 이미지와 .view 박스의 위치 계산
                     const view = document.querySelector(".banner .view");
                     const viewRect = view.getBoundingClientRect();
                     const imgRect = img.getBoundingClientRect();
 
                     const isInside =
-                        imgRect.top < viewRect.bottom &&   // 이미지 상단이 view 하단보다 위에 있고
-                        imgRect.bottom > viewRect.top;     // 이미지 하단이 view 상단보다 아래에 있을 때
+                        imgRect.top < viewRect.bottom &&
+                        imgRect.bottom > viewRect.top;
 
                     if (isInside) {
-                        img.classList.add("active");   // 칼라
+                        img.classList.add("active");
                     } else {
-                        img.classList.remove("active"); // 다시 흑백
+                        img.classList.remove("active");
                     }
                 }
             });
         });
-
-
-        // let panels = gsap.utils.toArray(".banner li");
-        // let tops = panels.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
-
-        // panels.forEach((panel, i) => {
-        //     ScrollTrigger.create({
-        //         trigger: panel,
-        //         start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
-        //         pin: true,
-        //         pinSpacing: false
-        //     });
-        // });
-
-        // ScrollTrigger.create({
-        //     snap: {
-        //         snapTo: (progress, self) => {
-        //             let panelStarts = tops.map(st => st.start),
-        //             snapScroll = gsap.utils.snap(panelStarts, self.scroll());
-        //             return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), snapScroll);
-        //         },
-        //         duration: 0.5
-        //     }
-        // });
 
         // Footer Typing Animation
         let footerAnimationPlayed = false;
@@ -731,28 +719,21 @@ gsap.timeline({
             trigger: 'footer',
             start: 'top 80%',
             end: 'top 20%',
-            onEnter: () => {
-                playTypingAnimation();
-            },
-            onLeaveBack: () => {
-                resetTypingAnimation();
-            }
+            onEnter: () => { playTypingAnimation(); },
+            onLeaveBack: () => { resetTypingAnimation(); }
         });
 
         function playTypingAnimation() {
-            // Reset first
             gsap.set('.typing-text', { opacity: 0 });
             $('.typing-text').show();
             $('.contact-text').hide();
             gsap.set('.contact-text', { opacity: 0 });
             gsap.set('footer .info', { opacity: 0 });
 
-            // Create new split
             if (typingSplit) typingSplit.revert();
             typingSplit = new SplitText('.typing-text', { type: 'words,chars' });
 
             gsap.set('.typing-text', { opacity: 1 });
-
             gsap.from(typingSplit.chars, {
                 opacity: 0,
                 duration: 0.08,
@@ -760,33 +741,20 @@ gsap.timeline({
                 ease: 'none'
             });
 
-            // 2초 후 CONTACT와 info로 전환
             gsap.delayedCall(2.6, () => {
-                // Fade out typing text
                 gsap.to('.typing-text', {
                     opacity: 0,
                     duration: 0.5,
                     onComplete: () => {
                         $('.typing-text').hide();
-
-                        // 0.3초 대기 후 CONTACT 표시
                         gsap.delayedCall(0.3, () => {
                             $('.contact-text').show();
-
-                            // Fade in CONTACT and info
-                            gsap.to('.contact-text', {
-                                opacity: 1,
-                                duration: 0.5
-                            });
-
+                            gsap.to('.contact-text', { opacity: 1, duration: 0.5 });
                             gsap.to('footer .info', {
                                 opacity: 1,
                                 duration: 0.5,
                                 delay: 0.2,
-                                onComplete: () => {
-                                    // info 페이드인 완료 후 drag me 표시
-                                    $('.contact-bubble').addClass('show');
-                                }
+                                onComplete: () => { $('.contact-bubble').addClass('show'); }
                             });
                         });
                     }
