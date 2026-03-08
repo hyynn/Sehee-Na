@@ -487,7 +487,6 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .info-container .info-item .skill { margin-bottom: 10px; } 
  .info-container .info-item:nth-child(2) { margin-top: 30px; }
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; } 
- .bottom-section, .sub-info-section { display: none; } 
 
  .banner .view { width: 450px; height: 112.5px; } 
  .banner .content ul li img { width: 450px; } 
@@ -511,7 +510,9 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
 
 
 @media (max-width: 479px){
+ #object1, #object2 {display: none;}
  .centerbox, .poster-container { width: 330px; } 
+ .bottom-section, .sub-info-section { display: none; } 
  footer { display: flex; justify-content: center; align-items: center; } 
  footer .centerbox { width: 300px; height: 260px; display: flex; flex-direction: column; } 
  footer .contact-text { text-align: left; } 
