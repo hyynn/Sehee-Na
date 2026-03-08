@@ -585,23 +585,24 @@ gsap.from(split2.chars, {
 
 
 // 포스터 핀 + 오브젝트 애니메이션
-const posterTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".poster-container",
-        start: "top top",
-        end: "+=1200",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-    }
-});
+mm.add("(pointer: fine)", () => {
+    const posterTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".poster-container",
+            start: "top top",
+            end: "+=1200",
+            scrub: 1,
+            pin: true,
+        }
+    });
 
-posterTl
-    .to("#object1", { xPercent: -20, yPercent: 15, rotate: -25, duration: 3 }, 0)
-    .to("#object2", { xPercent: 20, yPercent: -10, rotate: 25, duration: 3 }, 0)
-    .to("#object1", { xPercent: 10, yPercent: -20, rotate: 15, duration: 3 }, 3)
-    .to("#object2", { xPercent: -15, yPercent: 20, rotate: -15, duration: 3 }, 3)
-    .to(["#object1", "#object2"], { autoAlpha: 0, scale: 0.6, duration: 2 }, 5);
+    posterTl
+        .to("#object1", { xPercent: -20, yPercent: 15, rotate: -25, duration: 3 }, 0)
+        .to("#object2", { xPercent: 20, yPercent: -10, rotate: 25, duration: 3 }, 0)
+        .to("#object1", { xPercent: 10, yPercent: -20, rotate: 15, duration: 3 }, 3)
+        .to("#object2", { xPercent: -15, yPercent: 20, rotate: -15, duration: 3 }, 3)
+        .to(["#object1", "#object2"], { autoAlpha: 0, scale: 0.6, duration: 2 }, 5);
+});
 
 gsap.timeline({
     scrollTrigger: {
