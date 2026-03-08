@@ -510,7 +510,7 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
 
 
 @media (max-width: 479px){
- #object1, #object2 {display: none;}
+ /* #object1, #object2 {display: none;} */
  .centerbox, .poster-container { width: 330px; } 
  /* .bottom-section, .sub-info-section { display: none; }  */
  footer { display: flex; justify-content: center; align-items: center; } 
