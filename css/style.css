@@ -28,7 +28,7 @@ nav img#object2 { position: absolute; left: 0; top: 0; /* z-index: -1; */}
 .description-box { border-left: 2px solid #333; padding-left: 20px; width: 40%; font-size: 14px; line-height: 1.6; text-align: justify; } 
 
 /* 소개 */
-.info-container .centerbox .contents { display: flex; justify-content: space-between; align-items: center; padding: 0 20px;} 
+.info-container .centerbox .contents { display: flex; justify-content: space-between; align-items: center; padding: 0 40px 0 20px;} 
 .info-container .centerbox .photo { width: 300px; height: 400px; margin-right: 150px; box-shadow: 0 0 150px rgba(0, 0, 0, 0.1); border-radius: 100px 0 100px 0; border: 5px solid #fafafa; overflow: hidden; } 
 .info-container .centerbox .photo img { width: 100%; height: 100%; object-fit: cover; } 
 .info-container .centerbox .info-contents { display: flex; gap: 60px; width: 900px; margin-top: 30px; flex-direction: column; } 
@@ -353,6 +353,7 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .info-container h1 {margin-bottom: 20px;}
  .info-container .centerbox .info-contents { width: 800px; gap: 40px;} 
  .info-container .info-item .skills img { width: 45px; } 
+ .info-container .centerbox .photo {width: 280px; height: 360px;}
  .sectionbox .visualbox {width: 56%;}
  .sectionbox .visualbox .screen { height: 369px; top: 10px; border-radius: 8px;} 
  .sectionbox .textbox { width:44%}
@@ -363,7 +364,6 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .sectionbox .textbox { width: 36.33%; } 
  .sectionbox .textbox .detail { margin-top: 26px; gap: 6px;} 
  .sectionbox .textbox .detail .btn-detail { margin-top: 18px; } 
-
  footer .textbox { width: 600px; } 
  footer .contact-bubble { right: -150px; } 
  .page-preview-container, .sidebar-content { padding: 20px 0; } 
@@ -374,11 +374,13 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
 
  @media (max-width: 1220px){
  .centerbox, .poster-container { width: 1000px; } 
- .info-container .centerbox .info-contents { width: 600px; } 
- .info-container .info-item {gap: 6px;}
+ .info-container h1 { margin-bottom: 0; }
+ .info-container .centerbox .info-contents { width: 700px; } 
+ .info-container .info-item {gap: 6px; width: 320px;}
+ .info-container .centerbox .photo {width: 260px; height: 340px;}
  .sectionbox .visualbox .screen { height: 318px;  top: 9px; border-radius: 7px; } 
  .section5 .mobilebox .visualbox2 .screen { width: 70%; height: 305px; top: 9.5px; left: 57px; border-radius: 18px 13px 16px 18px; transform: rotateY(-30deg); } 
-.sectionbox .textbox { width: 40.66%; } 
+ .sectionbox .textbox { width: 40.66%; } 
  .sectionbox .textbox .detail { gap: 4px; margin-top: 20px; } 
  .sectionbox .textbox .detail .btn-detail { margin-top: 10px; } 
  .sectionbox .textbox .detail .item .label { width: 120px; } 
@@ -407,8 +409,9 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
 @media (max-width: 1023px){
  .centerbox, .poster-container { width: 900px; } 
  /* .info-container .info-item h2 { margin-bottom: 10px; }  */
+ .info-container .info-item .skill {margin-bottom: 18px;}
  .info-container .info-item .skills img { width: 40px; } 
- .info-container .info-item .skill { margin-bottom: 30px; } 
+ .info-container .centerbox .contents {padding: 0 14px;}
  .sectionbox .visualbox { width: 56.33%;}
  .sectionbox .visualbox .screen { height: 288px;  top: 8px; } 
  .section5 .mobilebox .visualbox2 .screen { width: 73%; height: 273px; top: 9px; left: 48px; border-radius: 15px 13px 12px 16px;transform: rotateY(-33deg); } 
@@ -436,7 +439,7 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
  .centerbox { padding: 100px 0; } 
  .info-container .centerbox .info-contents .info-content { margin-top: 0px } 
  .info-container h1 {margin-bottom: 0;}
- .info-container .info-item { width: 300px;gap: 10px; } 
+ .info-container .info-item { /* width: 300px; */ gap: 6px; } 
  .visualbox, .section5 .mobilebox { display: none; } 
  .sectionbox .textbox { width: 100%; } 
  .bottom-section { margin-top: 20px; } 
@@ -464,7 +467,7 @@ footer .info .textbox .detail:hover { background: rgba(255, 255, 255, 0.05); }
 @media (max-width: 767px){
  .centerbox, .poster-container { width: 550px; } 
  .poster-container { padding-top: 50px; } 
- .info-container .info-item { width: 260px; } 
+ .info-container .info-item { width: 300px; } 
  /* .info-container .info-item h2 { margin: 10px 0; }  */
  .sectionbox .textbox .detail { gap: 10px; margin-top: 30px; } 
  .banner .view { width: 600px; height: 150px; } 
