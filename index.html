@@ -586,18 +586,16 @@ gsap.from(split2.chars, {
 
 
 
-// 배너 타임라인 선언
+        // 배너 타임라인 선언
         const banner = gsap.timeline();
         banner.from(".banner-title-gsap", {
             top: 100,
             position: 'absolute'
         });
 
-        // matchMedia
         const mm = gsap.matchMedia();
 
         mm.add("(pointer: fine)", () => {
-            // 포스터 오브젝트
             const posterTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".poster-container",
@@ -615,24 +613,41 @@ gsap.from(split2.chars, {
                 .to("#object2", { xPercent: -15, yPercent: 20, rotate: -15, duration: 3 }, 3)
                 .to(["#object1", "#object2"], { autoAlpha: 0, scale: 0.6, duration: 2 }, 5);
 
-            // 배너 핀
-           mm.add("(pointer: coarse)", () => {
-    ScrollTrigger.create({
-        animation: banner,
-        trigger: ".banner",
-        start: "top top",
-        end: "70% top",
-        scrub: true,
-    });
-    ScrollTrigger.create({
-        animation: banner,
-        trigger: ".banner",
-        start: "top top",
-        end: "150% bottom",
-        scrub: true,
-        pin: ".view",
-    });
-});
+            ScrollTrigger.create({
+                animation: banner,
+                trigger: ".banner",
+                start: "top top",
+                end: "70% top",
+                scrub: true,
+                pin: ".banner-title-gsap",
+            });
+            ScrollTrigger.create({
+                animation: banner,
+                trigger: ".banner",
+                start: "top top",
+                end: "150% bottom",
+                scrub: true,
+                pin: ".view",
+            });
+        });
+
+        mm.add("(pointer: coarse)", () => {
+            ScrollTrigger.create({
+                animation: banner,
+                trigger: ".banner",
+                start: "top top",
+                end: "70% top",
+                scrub: true,
+            });
+            ScrollTrigger.create({
+                animation: banner,
+                trigger: ".banner",
+                start: "top top",
+                end: "150% bottom",
+                scrub: true,
+                pin: ".view",
+            });
+        });
 
         // introduction
         gsap.timeline({
