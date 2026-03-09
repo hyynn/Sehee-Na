@@ -133,7 +133,10 @@ $(document).ready(function () {
 
     // Footer 로드
     $('footer').load('include/footer.html', function () {
-        initFooterEvents();
+        if (typeof initFooterAnim === 'function') {
+            initFooterAnim();
+            ScrollTrigger.refresh();
+        }
     });
 
     // 탭 버튼 이벤트 등록
@@ -171,67 +174,9 @@ $(window).scroll(function () {
         }
     }
 
-    // Footer iframe 처리
-    if (document.body.id === 'main') {
-        if (scrollTop + windowHeight >= documentHeight - 10) {
-            $('footer iframe').addClass('active');
-
-            // 479px 이하: bubble 텍스트를 바로 "Contact me!"로
-            if (window.innerWidth <= 479) {
-                const $bubble = $('.contact-bubble');
-                if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
-                    $bubble.text('Contact me!');
-                }
-            }
-        } else {
-            $('footer iframe').removeClass('active');
-            $('.contact-bubble').removeClass('show');
-            $('.contact-bubble').text('Drag me!');
-        }
-    }
 });
 
-// Footer Events
-function initFooterEvents() {
-    if (document.body.id !== 'main') return;
 
-    let iframeActive = false;
-    let iframeInteracted = false;
-    const $iframe = $('footer iframe');
-    const $bubble = $('.contact-bubble');
-
-    $iframe.on('mouseenter', function () {
-        iframeActive = true;
-    }).on('mouseleave', function () {
-        if (iframeActive && document.activeElement.tagName === 'IFRAME') {
-            document.activeElement.blur();
-            $('body').focus();
-        }
-        iframeActive = false;
-    });
-
-    // 모바일/개발자도구용: pointermove 감지
-    $iframe.on('pointerdown', function () {
-        iframeInteracted = true;
-        setTimeout(function () {
-            if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
-                $bubble.text('Contact me!');
-            }
-        }, 100);
-    });
-}
-
-// Window Blur Event (PC용/iframe focus 감지)
-$(window).on('blur', function () {
-    if (document.body.id !== 'main') return;
-    // 메인 페이지에서만 실행
-    if (document.activeElement.tagName === 'IFRAME') {
-        const $bubble = $('.contact-bubble');
-        if ($bubble.hasClass('show') && $bubble.text().trim() === 'Drag me!') {
-            $bubble.text('Contact me!');
-        }
-    }
-});
 
 
 // URL 해시로 특정 섹션으로 이동 (GSAP ScrollSmoother 대응)
