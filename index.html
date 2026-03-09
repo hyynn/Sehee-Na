@@ -721,73 +721,27 @@
             });
         });
 
-        // Footer Typing Animation
-        let footerAnimationPlayed = false;
-        let typingSplit;
-
-        ScrollTrigger.create({
-            trigger: 'footer',
-            start: 'top 80%',
-            end: 'top 20%',
-            onEnter: () => { playTypingAnimation(); },
-            onLeaveBack: () => { resetTypingAnimation(); }
-        });
-
-        function playTypingAnimation() {
-            gsap.set('.typing-text', { opacity: 0 });
-            $('.typing-text').show();
-            $('.contact-text').hide();
-            gsap.set('.contact-text', { opacity: 0 });
-            gsap.set('footer .info', { opacity: 0 });
-
-            if (typingSplit) typingSplit.revert();
-            typingSplit = new SplitText('.typing-text', { type: 'words,chars' });
-
-            gsap.set('.typing-text', { opacity: 1 });
-            gsap.from(typingSplit.chars, {
-                opacity: 0,
-                duration: 0.08,
-                stagger: 0.08,
-                ease: 'none'
-            });
-
-            gsap.delayedCall(2.6, () => {
-                gsap.to('.typing-text', {
-                    opacity: 0,
-                    duration: 0.5,
-                    onComplete: () => {
-                        $('.typing-text').hide();
-                        gsap.delayedCall(0.3, () => {
-                            $('.contact-text').show();
-                            gsap.to('.contact-text', { opacity: 1, duration: 0.5 });
-                            gsap.to('footer .info', {
-                                opacity: 1,
-                                duration: 0.5,
-                                delay: 0.2,
-                                onComplete: () => { $('.contact-bubble').addClass('show'); }
-                            });
-                        });
-                    }
-                });
-            });
+        // Footer Animation
+        function initFooterAnim() {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: 'footer',
+                    start: 'top 80%',
+                    end: 'bottom bottom',
+                    scrub: 1,
+                }
+            })
+                .to('.footer-name', { duration: 5.5 }) // 고정 구간
+                .fromTo('.footer-name',
+                    { fontSize: 'clamp(60px, 8vw, 120px)', xPercent: 0, opacity: 1 },
+                    { fontSize: '28vw', xPercent: -40, opacity: 0, duration: 3, ease: 'power2.inOut' }
+                )
+                .fromTo('.footer-contact-layer',
+                    { opacity: 0 },
+                    { opacity: 1, duration: 1.5 },
+                    '-=1.5'
+                );
         }
-
-        function resetTypingAnimation() {
-            gsap.killTweensOf('.typing-text');
-            gsap.killTweensOf('.contact-text');
-            gsap.killTweensOf('footer .info');
-
-            if (typingSplit) typingSplit.revert();
-
-            gsap.set('.typing-text', { opacity: 0 });
-            gsap.set('.contact-text', { opacity: 0 });
-            gsap.set('footer .info', { opacity: 0 });
-
-            $('.typing-text').show();
-            $('.contact-text').hide();
-        }
-
-
     </script>
 </body>
 
